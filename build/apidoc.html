@@ -46,406 +46,407 @@
     font-weight: bold;
 }
 </style>
-<h1>api-documentation for
+<h1>api documentation for
     <a
-        
+
         href="http://nodemon.io"
-        
+
     >nodemon (v1.11.0)</a>
 </h1>
+<h4>Simple monitor script for use during development of a node.js app.</h4>
 <div class="apidocSectionDiv"><a
     href="#apidoc.tableOfContents"
     id="apidoc.tableOfContents"
 ><h1>table of contents</h1></a><ol>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon">module nodemon</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.addListener">
             function <span class="apidocSignatureSpan">nodemon.</span>addListener
             <span class="apidocSignatureSpan">(event, handler)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.emit">
             function <span class="apidocSignatureSpan">nodemon.</span>emit
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.on">
             function <span class="apidocSignatureSpan">nodemon.</span>on
             <span class="apidocSignatureSpan">(event, handler)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.once">
             function <span class="apidocSignatureSpan">nodemon.</span>once
             <span class="apidocSignatureSpan">(event, handler)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.removeAllListeners">
             function <span class="apidocSignatureSpan">nodemon.</span>removeAllListeners
             <span class="apidocSignatureSpan">(event)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.reset">
             function <span class="apidocSignatureSpan">nodemon.</span>reset
             <span class="apidocSignatureSpan">(done)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.restart">
             function <span class="apidocSignatureSpan">nodemon.</span>restart
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.version">
             function <span class="apidocSignatureSpan">nodemon.</span>version
             <span class="apidocSignatureSpan">(callback)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>cli</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>config</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>monitor</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>rules</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>utils</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.cli">module nodemon.cli</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.cli.parse">
             function <span class="apidocSignatureSpan">nodemon.cli.</span>parse
             <span class="apidocSignatureSpan">(argv)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.config">module nodemon.config</a><ol>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">nodemon.config.</span>required</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">nodemon.config.</span>run</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.config.load">
             function <span class="apidocSignatureSpan">nodemon.config.</span>load
             <span class="apidocSignatureSpan">(settings, ready)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.config.reset">
             function <span class="apidocSignatureSpan">nodemon.config.</span>reset
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nodemon.config.</span>timeout</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.config.</span>dirs</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.config.</span>options</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.config.</span>system</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nodemon.config.</span>signal</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.monitor">module nodemon.monitor</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.monitor.run">
             function <span class="apidocSignatureSpan">nodemon.monitor.</span>run
             <span class="apidocSignatureSpan">(options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.monitor.watch">
             function <span class="apidocSignatureSpan">nodemon.monitor.</span>watch
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.rules">module nodemon.rules</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.rules.add">
             function <span class="apidocSignatureSpan">nodemon.rules.</span>add
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.rules.load">
             function <span class="apidocSignatureSpan">nodemon.rules.</span>load
             <span class="apidocSignatureSpan">(filename, callback)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.rules.reset">
             function <span class="apidocSignatureSpan">nodemon.rules.</span>reset
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>rules</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.rules.</span>ignore</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.rules.</span>watch</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.utils">module nodemon.utils</a><ol>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">nodemon.utils.</span>isLinux</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">nodemon.utils.</span>isMac</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">nodemon.utils.</span>isRequired</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">nodemon.utils.</span>isWindows</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.utils.clone">
             function <span class="apidocSignatureSpan">nodemon.utils.</span>clone
             <span class="apidocSignatureSpan">(obj)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.utils.merge">
             function <span class="apidocSignatureSpan">nodemon.utils.</span>merge
             <span class="apidocSignatureSpan">(source, target, result)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.utils.quiet">
             function <span class="apidocSignatureSpan">nodemon.utils.</span>quiet
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.utils.regexpToText">
             function <span class="apidocSignatureSpan">nodemon.utils.</span>regexpToText
             <span class="apidocSignatureSpan">(t)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.utils.reset">
             function <span class="apidocSignatureSpan">nodemon.utils.</span>reset
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.utils.stringify">
             function <span class="apidocSignatureSpan">nodemon.utils.</span>stringify
             <span class="apidocSignatureSpan">(exec, args)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.utils.</span>bus</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.utils.</span>log</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.utils.</span>version</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nodemon.utils.</span>home</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.version">module nodemon.version</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.version.version">
             function <span class="apidocSignatureSpan">nodemon.</span>version
             <span class="apidocSignatureSpan">(callback)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.version.pin">
             function <span class="apidocSignatureSpan">nodemon.version.</span>pin
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon" id="apidoc.module.nodemon">module nodemon</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.nodemon.addListener" id="apidoc.element.nodemon.addListener">
         function <span class="apidocSignatureSpan">nodemon.</span>addListener
@@ -461,9 +462,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.emit" id="apidoc.element.nodemon.emit">
         function <span class="apidocSignatureSpan">nodemon.</span>emit
@@ -493,9 +494,9 @@ var emit = {
 // now work out what to bind to...
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.on" id="apidoc.element.nodemon.on">
         function <span class="apidocSignatureSpan">nodemon.</span>on
@@ -517,7 +518,7 @@ var emit = {
 nodemon({
   script: ...,
   stdout: false // important: this tells nodemon not to output to console
-}).<span class="apidocCodeKeywordSpan">on</span>(&#x27;readable&#x27;, function() { // the `readable` event indicates that data \
+}).<span class="apidocCodeKeywordSpan">on</span>(&#x27;readable&#x27;, function() { // the `readable` event indicates that data
 is ready to pick up
   this.stdout.pipe(fs.createWriteStream(&#x27;output.txt&#x27;));
   this.stderr.pipe(fs.createWriteStream(&#x27;err.txt&#x27;));
@@ -527,9 +528,9 @@ is ready to pick up
 ## Using io.js for nodemon
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.once" id="apidoc.element.nodemon.once">
         function <span class="apidocSignatureSpan">nodemon.</span>once
@@ -551,10 +552,10 @@ is ready to pick up
 
 ## Controlling shutdown of your script
 
-nodemon sends a kill signal to your application when it sees a file update. If you need to clean up on shutdown inside your scri\
-pt you can capture the kill signal and handle it yourself.
+nodemon sends a kill signal to your application when it sees a file update. If you need to clean up on shutdown inside your script
+ you can capture the kill signal and handle it yourself.
 
-The following example will listen once for the `SIGUSR2` signal (used by nodemon to restart), run the clean up process and then \
+The following example will listen once for the `SIGUSR2` signal (used by nodemon to restart), run the clean up process and then
 kill itself for nodemon to continue control:
 
     process.<span class="apidocCodeKeywordSpan">once</span>(&#x27;SIGUSR2&#x27;, function () {
@@ -563,13 +564,13 @@ kill itself for nodemon to continue control:
       });
     });
 
-Note that the `process.kill` is *only* called once your shutdown jobs are complete. Hat tip to [Benjie Gillam](http://www.benjie\
-gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) for writing this technique up.
+Note that the `process.kill` is *only* called once your shutdown jobs are complete. Hat tip to [Benjie Gillam](http://www.benjiegillam
+.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) for writing this technique up.
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.removeAllListeners" id="apidoc.element.nodemon.removeAllListeners">
         function <span class="apidocSignatureSpan">nodemon.</span>removeAllListeners
@@ -592,9 +593,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.reset" id="apidoc.element.nodemon.reset">
         function <span class="apidocSignatureSpan">nodemon.</span>reset
@@ -607,9 +608,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.restart" id="apidoc.element.nodemon.restart">
         function <span class="apidocSignatureSpan">nodemon.</span>restart
@@ -624,9 +625,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.version" id="apidoc.element.nodemon.version">
         function <span class="apidocSignatureSpan">nodemon.</span>version
@@ -682,24 +683,24 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon.cli" id="apidoc.module.nodemon.cli">module nodemon.cli</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.nodemon.cli.parse" id="apidoc.element.nodemon.cli.parse">
         function <span class="apidocSignatureSpan">nodemon.cli.</span>parse
@@ -716,18 +717,18 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon.config" id="apidoc.module.nodemon.config">module nodemon.config</a></h1>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.config.load" id="apidoc.element.nodemon.config.load">
         function <span class="apidocSignatureSpan">nodemon.config.</span>load
@@ -778,9 +779,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.config.reset" id="apidoc.element.nodemon.config.reset">
         function <span class="apidocSignatureSpan">nodemon.config.</span>reset
@@ -798,24 +799,24 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon.monitor" id="apidoc.module.nodemon.monitor">module nodemon.monitor</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.nodemon.monitor.run" id="apidoc.element.nodemon.monitor.run">
         function <span class="apidocSignatureSpan">nodemon.monitor.</span>run
@@ -978,9 +979,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
   run.kill = function (noRestart, callback) ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.monitor.watch" id="apidoc.element.nodemon.monitor.watch">
         function <span class="apidocSignatureSpan">nodemon.monitor.</span>watch
@@ -1068,14 +1069,14 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon.rules" id="apidoc.module.nodemon.rules">module nodemon.rules</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.nodemon.rules.add" id="apidoc.element.nodemon.rules.add">
         function <span class="apidocSignatureSpan">nodemon.rules.</span>add
@@ -1086,9 +1087,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
     <li>description and source-code<pre class="apidocCodePre">add = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.rules.load" id="apidoc.element.nodemon.rules.load">
         function <span class="apidocSignatureSpan">nodemon.rules.</span>load
@@ -1116,9 +1117,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.rules.reset" id="apidoc.element.nodemon.rules.reset">
         function <span class="apidocSignatureSpan">nodemon.rules.</span>reset
@@ -1133,28 +1134,28 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon.utils" id="apidoc.module.nodemon.utils">module nodemon.utils</a></h1>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.utils.clone" id="apidoc.element.nodemon.utils.clone">
         function <span class="apidocSignatureSpan">nodemon.utils.</span>clone
@@ -1201,9 +1202,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.utils.merge" id="apidoc.element.nodemon.utils.merge">
         function <span class="apidocSignatureSpan">nodemon.utils.</span>merge
@@ -1246,9 +1247,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.utils.quiet" id="apidoc.element.nodemon.utils.quiet">
         function <span class="apidocSignatureSpan">nodemon.utils.</span>quiet
@@ -1268,9 +1269,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.utils.regexpToText" id="apidoc.element.nodemon.utils.regexpToText">
         function <span class="apidocSignatureSpan">nodemon.utils.</span>regexpToText
@@ -1286,9 +1287,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.utils.reset" id="apidoc.element.nodemon.utils.reset">
         function <span class="apidocSignatureSpan">nodemon.utils.</span>reset
@@ -1308,9 +1309,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.utils.stringify" id="apidoc.element.nodemon.utils.stringify">
         function <span class="apidocSignatureSpan">nodemon.utils.</span>stringify
@@ -1335,22 +1336,22 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon.version" id="apidoc.module.nodemon.version">module nodemon.version</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.nodemon.version.version" id="apidoc.element.nodemon.version.version">
         function <span class="apidocSignatureSpan">nodemon.</span>version
@@ -1406,9 +1407,9 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.nodemon.version.pin" id="apidoc.element.nodemon.version.pin">
         function <span class="apidocSignatureSpan">nodemon.version.</span>pin
@@ -1423,8 +1424,8 @@ gillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) f
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocFooterDiv">
