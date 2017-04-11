@@ -126,15 +126,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.nodemon.version">
-            function <span class="apidocSignatureSpan">nodemon.</span>version
-            <span class="apidocSignatureSpan">(callback)</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>config</span>
 
         </li>
@@ -205,28 +196,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.version">module nodemon.version</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.nodemon.version.version">
-            function <span class="apidocSignatureSpan">nodemon.</span>version
-            <span class="apidocSignatureSpan">(callback)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.nodemon.version.pin">
-            function <span class="apidocSignatureSpan">nodemon.version.</span>pin
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -262,23 +231,7 @@
   bus.emit.apply(bus, [].slice.call(arguments));
   return nodemon;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  } else {
-child = spawn(sh, args);
-  }
-
-  if (config.required) {
-var emit = {
-  stdout: function (data) {
-    bus.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;stdout&#x27;, data);
-  },
-  stderr: function (data) {
-    bus.emit(&#x27;stderr&#x27;, data);
-  },
-};
-
-// now work out what to bind to...
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -414,64 +367,6 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
 
 
-    <h2>
-        <a href="#apidoc.element.nodemon.version" id="apidoc.element.nodemon.version">
-        function <span class="apidocSignatureSpan">nodemon.</span>version
-        <span class="apidocSignatureSpan">(callback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function version(callback) {
-  // first find the package.json as this will be our root
-  var promise = findPackage(path.dirname(module.parent.filename))
-    .then(function (dir) {
-    // now try to load the package
-    var v = require(path.resolve(dir, &#x27;package.json&#x27;)).version;
-
-    if (v &#x26;&#x26; v !== &#x27;0.0.0&#x27;) {
-      return v;
-    }
-
-    root = dir;
-
-    // else we&#x27;re in development, give the commit out
-    // get the last commit and whether the working dir is dirty
-    var promises = [
-      branch().catch(function () { return &#x27;master&#x27;; }),
-      commit().catch(function () { return &#x27;&#x3c;none&#x3e;&#x27;; }),
-      dirty().catch(function () { return 0; }),
-    ];
-
-    // use the cached result as the export
-    return Promise.all(promises).then(function (res) {
-      var branch = res[0];
-      var commit = res[1];
-      var dirtyCount = parseInt(res[2], 10);
-      var curr = branch + &#x27;: &#x27; + commit;
-      if (dirtyCount !== 0) {
-        curr += &#x27; (&#x27; + dirtyCount + &#x27; dirty files)&#x27;;
-      }
-
-      return curr;
-    });
-  }).catch(function (error) {
-    console.log(error.stack);
-    throw error;
-  });
-
-  if (callback) {
-    promise.then(function (res) {
-      callback(null, res);
-    }, callback);
-  }
-
-  return promise;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
 
 </div>
 
@@ -563,86 +458,6 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
 
 
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.nodemon.version" id="apidoc.module.nodemon.version">module nodemon.version</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.nodemon.version.version" id="apidoc.element.nodemon.version.version">
-        function <span class="apidocSignatureSpan">nodemon.</span>version
-        <span class="apidocSignatureSpan">(callback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function version(callback) {
-  // first find the package.json as this will be our root
-  var promise = findPackage(path.dirname(module.parent.filename))
-    .then(function (dir) {
-    // now try to load the package
-    var v = require(path.resolve(dir, &#x27;package.json&#x27;)).version;
-
-    if (v &#x26;&#x26; v !== &#x27;0.0.0&#x27;) {
-      return v;
-    }
-
-    root = dir;
-
-    // else we&#x27;re in development, give the commit out
-    // get the last commit and whether the working dir is dirty
-    var promises = [
-      branch().catch(function () { return &#x27;master&#x27;; }),
-      commit().catch(function () { return &#x27;&#x3c;none&#x3e;&#x27;; }),
-      dirty().catch(function () { return 0; }),
-    ];
-
-    // use the cached result as the export
-    return Promise.all(promises).then(function (res) {
-      var branch = res[0];
-      var commit = res[1];
-      var dirtyCount = parseInt(res[2], 10);
-      var curr = branch + &#x27;: &#x27; + commit;
-      if (dirtyCount !== 0) {
-        curr += &#x27; (&#x27; + dirtyCount + &#x27; dirty files)&#x27;;
-      }
-
-      return curr;
-    });
-  }).catch(function (error) {
-    console.log(error.stack);
-    throw error;
-  });
-
-  if (callback) {
-    promise.then(function (res) {
-      callback(null, res);
-    }, callback);
-  }
-
-  return promise;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.nodemon.version.pin" id="apidoc.element.nodemon.version.pin">
-        function <span class="apidocSignatureSpan">nodemon.version.</span>pin
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function pin() {
-  return version().then(function (v) {
-    version.pinned = v;
-  });
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
 
 
 </div>

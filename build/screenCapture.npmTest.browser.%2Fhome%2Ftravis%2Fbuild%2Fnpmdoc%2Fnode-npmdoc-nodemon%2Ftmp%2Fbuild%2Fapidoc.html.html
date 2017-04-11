@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://nodemon.io"
-
-    >nodemon (v1.11.0)</a>
+    <a href="http://nodemon.io">nodemon (v1.11.0)</a>
 </h1>
 <h4>Simple monitor script for use during development of a node.js app.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon">module nodemon</a><ol>
 
@@ -257,10 +250,10 @@
 nodemon({
   script: ...,
   stdout: false // important: this tells nodemon not to output to console
-}).<span class="apidocCodeKeywordSpan">on</span>(&#x27;readable&#x27;, function() { // the `readable` event indicates that data
+}).<span class="apidocCodeKeywordSpan">on</span>('readable', function() { // the `readable` event indicates that data
 is ready to pick up
-  this.stdout.pipe(fs.createWriteStream(&#x27;output.txt&#x27;));
-  this.stderr.pipe(fs.createWriteStream(&#x27;err.txt&#x27;));
+  this.stdout.pipe(fs.createWriteStream('output.txt'));
+  this.stderr.pipe(fs.createWriteStream('err.txt'));
 });
 ```
 
@@ -281,7 +274,7 @@ is ready to pick up
   if (!eventHandlers[event]) { eventHandlers[event] = []; }
   eventHandlers[event].push(handler);
   bus.once(event, function () {
-    debug(&#x27;bus.once(%s)&#x27;, event);
+    debug('bus.once(%s)', event);
     eventHandlers[event].splice(eventHandlers[event].indexOf(handler), 1);
     handler.apply(this, arguments);
   });
@@ -297,9 +290,9 @@ nodemon sends a kill signal to your application when it sees a file update. If y
 The following example will listen once for the `SIGUSR2` signal (used by nodemon to restart), run the clean up process and then
 kill itself for nodemon to continue control:
 
-    process.<span class="apidocCodeKeywordSpan">once</span>(&#x27;SIGUSR2&#x27;, function () {
+    process.<span class="apidocCodeKeywordSpan">once</span>('SIGUSR2', function () {
       gracefulShutdown(function () {
-        process.kill(process.pid, &#x27;SIGUSR2&#x27;);
+        process.kill(process.pid, 'SIGUSR2');
       });
     });
 
@@ -343,7 +336,7 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">reset = function (done) {
-  bus.emit(&#x27;reset&#x27;, done);
+  bus.emit('reset', done);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -358,8 +351,8 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">restart = function () {
-  utils.log.status(&#x27;restarting child process&#x27;);
-  bus.emit(&#x27;restart&#x27;);
+  utils.log.status('restarting child process');
+  bus.emit('restart');
   return nodemon;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -393,15 +386,15 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
     if (options.watch.length === 0) {
       // this is to catch when the watch is left blank
-      options.watch.push(&#x27;*.*&#x27;);
+      options.watch.push('*.*');
     }
 
-    if (options[&#x27;watch_interval&#x27;]) { // jshint ignore:line
-      options.watchInterval = options[&#x27;watch_interval&#x27;]; // jshint ignore:line
+    if (options['watch_interval']) { // jshint ignore:line
+      options.watchInterval = options['watch_interval']; // jshint ignore:line
     }
 
     config.watchInterval = options.watchInterval || null;
-    if (options[&#x27;signal&#x27;]) { // jshint ignore:line
+    if (options['signal']) { // jshint ignore:line
       config.signal = options.signal;
     }
 
@@ -415,12 +408,12 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     options.monitor = rulesToMonitor(options.watch, options.ignore, config);
 
     var cwd = process.cwd();
-    debug(&#x27;config: dirs&#x27;, config.dirs);
+    debug('config: dirs', config.dirs);
     if (config.dirs.length === 0) {
       config.dirs.unshift(cwd);
     }
 
-    bus.emit(&#x27;config:update&#x27;, config);
+    bus.emit('config:update', config);
     pinVersion().then(function () {
       ready(config);
     });
@@ -468,3 +461,4 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     ]
 </div>
 </div>
+</body></html>
