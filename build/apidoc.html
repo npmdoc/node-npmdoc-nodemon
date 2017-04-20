@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.nodemon">
+            function <span class="apidocSignatureSpan"></span>nodemon
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.addListener">
             function <span class="apidocSignatureSpan">nodemon.</span>addListener
             <span class="apidocSignatureSpan">(event, handler)</span>
@@ -72,9 +81,27 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.colour">
+            function <span class="apidocSignatureSpan">nodemon.</span>colour
+            <span class="apidocSignatureSpan">(c, str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.nodemon.emit">
             function <span class="apidocSignatureSpan">nodemon.</span>emit
             <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.match">
+            function <span class="apidocSignatureSpan">nodemon.</span>match
+            <span class="apidocSignatureSpan">(files, monitor, ext)</span>
             </a>
 
         </li>
@@ -126,7 +153,77 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.run">
+            function <span class="apidocSignatureSpan">nodemon.</span>run
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.version">
+            function <span class="apidocSignatureSpan">nodemon.</span>version
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.</span>watch</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.colour">module nodemon.colour</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.colour.colour">
+            function <span class="apidocSignatureSpan">nodemon.</span>colour
+            <span class="apidocSignatureSpan">(c, str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.colour.strip">
+            function <span class="apidocSignatureSpan">nodemon.colour.</span>strip
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nodemon.colour.</span>black</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nodemon.colour.</span>green</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nodemon.colour.</span>red</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nodemon.colour.</span>yellow</span>
 
         </li>
 
@@ -166,6 +263,12 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nodemon.config.</span>lastStarted</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nodemon.config.</span>timeout</span>
 
         </li>
@@ -173,6 +276,12 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.config.</span>dirs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodemon.config.</span>loaded</span>
 
         </li>
 
@@ -196,10 +305,255 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.match">module nodemon.match</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.match.match">
+            function <span class="apidocSignatureSpan">nodemon.</span>match
+            <span class="apidocSignatureSpan">(files, monitor, ext)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.match.rulesToMonitor">
+            function <span class="apidocSignatureSpan">nodemon.match.</span>rulesToMonitor
+            <span class="apidocSignatureSpan">(watch, ignore, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.run">module nodemon.run</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.run.run">
+            function <span class="apidocSignatureSpan">nodemon.</span>run
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.run.kill">
+            function <span class="apidocSignatureSpan">nodemon.run.</span>kill
+            <span class="apidocSignatureSpan">(flag, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.run.restart">
+            function <span class="apidocSignatureSpan">nodemon.run.</span>restart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.version">module nodemon.version</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.version.version">
+            function <span class="apidocSignatureSpan">nodemon.</span>version
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.version.pin">
+            function <span class="apidocSignatureSpan">nodemon.version.</span>pin
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodemon.watch">module nodemon.watch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.watch.watch">
+            function <span class="apidocSignatureSpan">nodemon.</span>watch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodemon.watch.resetWatchers">
+            function <span class="apidocSignatureSpan">nodemon.watch.</span>resetWatchers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.nodemon" id="apidoc.module.nodemon">module nodemon</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.nodemon" id="apidoc.element.nodemon.nodemon">
+        function <span class="apidocSignatureSpan"></span>nodemon
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nodemon(settings) {
+  nodemon.reset();
+
+  // allow the cli string as the argument to nodemon, and allow for
+  // `node nodemon -V app.js` or just `-V app.js`
+  if (typeof settings === &#x27;string&#x27;) {
+    settings = settings.trim();
+    if (settings.indexOf(&#x27;node&#x27;) !== 0) {
+      if (settings.indexOf(&#x27;nodemon&#x27;) !== 0) {
+        settings = &#x27;nodemon &#x27; + settings;
+      }
+      settings = &#x27;node &#x27; + settings;
+    }
+    settings = cli.parse(settings);
+  }
+
+  // set the debug flag as early as possible to get all the detailed logging
+  if (settings.verbose) {
+    utils.debug = true;
+  }
+
+  if (settings.help) {
+    console.log(help(settings.help));
+    if (!config.required) {
+      process.exit(0);
+    }
+  }
+
+  if (settings.version) {
+    version().then(function (v) {
+      console.log(v);
+      if (!config.required) {
+        process.exit(0);
+      }
+    });
+    return;
+  }
+
+  // nodemon tools like grunt-nodemon. This affects where
+  // the script is being run from, and will affect where
+  // nodemon looks for the nodemon.json files
+  if (settings.cwd) {
+    // this is protection to make sure we haven&#x27;t dont the chdir already...
+    // say like in cli/parse.js (which is where we do this once already!)
+    if (process.cwd() !== path.resolve(config.system.cwd, settings.cwd)) {
+      process.chdir(settings.cwd);
+    }
+  }
+
+  config.load(settings, function (config) {
+    if (!config.options.dump &#x26;&#x26; !config.options.execOptions.script &#x26;&#x26;
+      config.options.execOptions.exec === &#x27;node&#x27;) {
+      if (!config.required) {
+        console.log(help(&#x27;usage&#x27;));
+        process.exit();
+      }
+      return;
+    }
+
+    // before we print anything, update the colour setting on logging
+    utils.colours = config.options.colours;
+
+    // always echo out the current version
+    utils.log.info(version.pinned);
+
+    if (config.options.cwd) {
+      utils.log.detail(&#x27;process root: &#x27; + process.cwd());
+    }
+
+    config.loaded.forEach(function (filename) {
+      utils.log.detail(&#x27;reading config &#x27; + filename);
+    });
+
+    // echo out notices about running state
+    if (config.options.stdin &#x26;&#x26; config.options.restartable) {
+      // allow nodemon to restart when the use types &#x27;rs\n&#x27;
+      process.stdin.resume();
+      process.stdin.setEncoding(&#x27;utf8&#x27;);
+      process.stdin.on(&#x27;data&#x27;, function (data) {
+        data = (data + &#x27;&#x27;).trim().toLowerCase();
+
+        // if the keys entered match the restartable value, then restart!
+        if (data === config.options.restartable) {
+          bus.emit(&#x27;restart&#x27;);
+        }
+      });
+    } else if (config.options.stdin) {
+      // if &#x27;restartable&#x27; is disabled (via a nodemon.json)
+      // then it&#x27;s possible we&#x27;re being used with a REPL
+      // so let&#x27;s make sure we don&#x27;t eat the key presses
+      // but also, since we&#x27;re wrapping, watch out for
+      // special keys, like ctrl+c x 2 or &#x27;.exit&#x27; or ctrl+d
+      var ctrlC = false;
+      var buffer = &#x27;&#x27;;
+
+      process.stdin.on(&#x27;data&#x27;, function (data) {
+        buffer += data;
+        data = data.toString();
+        var chr = data.charCodeAt(0);
+        if (chr === 3) {
+          if (ctrlC) {
+            process.exit();
+          }
+          ctrlC = true;
+        } else if (buffer === &#x27;.exit&#x27; || chr === 4) {
+          process.exit();
+        } else if (ctrlC || chr === 10) {
+          ctrlC = false;
+          buffer = &#x27;&#x27;;
+        }
+      });
+      process.stdin.setRawMode(true);
+    }
+
+    if (config.options.restartable) {
+      utils.log.info(&#x27;to restart at any time, enter `&#x27; +
+        config.options.restartable + &#x27;`&#x27;);
+    }
+
+    var none = function (v) {
+      return v;
+    };
+
+    utils.log.detail(&#x27;ignoring: &#x27; + config.options.monitor.map(function (rule) {
+      return rule.slice(0, 1) === &#x27;!&#x27; ? rule.slice(1) : false;
+    }).filter(none).join(&#x27; &#x27;));
+
+    utils.log.info(&#x27;watching: &#x27; + config.options.monitor.map(function (rule) {
+      return rule.slice(0, 1) !== &#x27;!&#x27; ? rule : false;
+    }).filter(none).join(&#x27; &#x27;));
+
+    utils.log.detail(&#x27;watching extensions: &#x27; + config.options.execOptions.ext);
+
+
+    if (config.options.dump) {
+      utils.log._log(&#x27;log&#x27;, &#x27;--------- ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -221,6 +575,21 @@
 
 
     <h2>
+        <a href="#apidoc.element.nodemon.colour" id="apidoc.element.nodemon.colour">
+        function <span class="apidocSignatureSpan">nodemon.</span>colour
+        <span class="apidocSignatureSpan">(c, str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function colour(c, str) {
+  return (colour[c] || colour.black) + str + colour.black;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.nodemon.emit" id="apidoc.element.nodemon.emit">
         function <span class="apidocSignatureSpan">nodemon.</span>emit
         <span class="apidocSignatureSpan">()</span>
@@ -231,7 +600,167 @@
   bus.emit.apply(bus, [].slice.call(arguments));
   return nodemon;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  } else {
+child = spawn(sh, args);
+  }
+
+  if (config.required) {
+var emit = {
+  stdout: function (data) {
+    bus.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;stdout&#x27;, data);
+  },
+  stderr: function (data) {
+    bus.emit(&#x27;stderr&#x27;, data);
+  },
+};
+
+// now work out what to bind to...
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.match" id="apidoc.element.nodemon.match">
+        function <span class="apidocSignatureSpan">nodemon.</span>match
+        <span class="apidocSignatureSpan">(files, monitor, ext)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function match(files, monitor, ext) {
+  // sort the rules by highest specificity (based on number of slashes)
+  // ignore rules (!) get sorted highest as they take precedent
+  // TODO actually check separator rules work on windows
+  var rules = monitor.sort(function (a, b) {
+    var r = b.split(path.sep).length - a.split(path.sep).length;
+    var aIsIgnore = a.slice(0, 1) === &#x27;!&#x27;;
+    var bIsIgnore = b.slice(0, 1) === &#x27;!&#x27;;
+
+    if (aIsIgnore || bIsIgnore) {
+      if (aIsIgnore) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+
+    if (r === 0) {
+      return b.length - a.length;
+    }
+    return r;
+  }).map(function (s) {
+    var prefix = s.slice(0, 1);
+
+    if (prefix === &#x27;!&#x27;) {
+      return &#x27;!**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s.slice(1);
+    } else if (s.slice(0, 2) === &#x27;..&#x27;) {
+      return path.resolve(process.cwd(), s);
+    }
+    return &#x27;**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s;
+  });
+
+  var good = [];
+  var whitelist = []; // files that we won&#x27;t check against the extension
+  var ignored = 0;
+  var watched = 0;
+  var usedRules = [];
+  var minimatchOpts = {};
+
+  // enable case-insensitivity on Windows
+  if (utils.isWindows) {
+    minimatchOpts.nocase = true;
+  }
+
+  files.forEach(function (file) {
+    var matched = false;
+    for (var i = 0; i &#x3c; rules.length; i++) {
+      if (rules[i].slice(0, 1) === &#x27;!&#x27;) {
+        if (!minimatch(file, rules[i], minimatchOpts)) {
+          ignored++;
+          matched = true;
+          break;
+        }
+      } else {
+        if (minimatch(file, rules[i], minimatchOpts)) {
+          watched++;
+
+          // don&#x27;t repeat the output if a rule is matched
+          if (usedRules.indexOf(rules[i]) === -1) {
+            usedRules.push(rules[i]);
+            utils.log.detail(&#x27;matched rule: &#x27; + rules[i]);
+          }
+
+          // if the rule doesn&#x27;t match the WATCH EVERYTHING
+          // but *does* match a rule that ends with *.*, then
+          // white list it - in that we don&#x27;t run it through
+          // the extension check too.
+          if (rules[i] !== &#x27;**&#x27; + path.sep + &#x27;*.*&#x27; &#x26;&#x26;
+            rules[i].slice(-3) === &#x27;*.*&#x27;) {
+            whitelist.push(file);
+          } else if (path.basename(file) === path.basename(rules[i])) {
+            // if the file matches the actual rule, then it&#x27;s put on whitelist
+            whitelist.push(file);
+          } else {
+            good.push(file);
+          }
+          matched = true;
+          break;
+        }
+      }
+    }
+    if (!matched) {
+      ignored++;
+    }
+  });
+
+
+  // finally check the good files against the extensions that we&#x27;re monitoring
+  if (ext) {
+    if (ext.indexOf(&#x27;,&#x27;) === -1) {
+      ext = &#x27;**/*.&#x27; + ext;
+    } else {
+      ext = &#x27;**/*.{&#x27; + ext + &#x27;}&#x27;;
+    }
+
+    good = good.filter(function (file) {
+      // only compare the filename to the extension test
+      return minimatch(path.basename(file), ext, minimatchOpts);
+    });
+  } // else assume *.*
+
+  var result = good.concat(whitelist);
+
+  if (utils.isWindows) {
+    // fix for windows testing - I *think* this is okay to do
+    result = result.map(function (file) {
+      return file.slice(0, 1).toLowerCase() + file.slice(1);
+    });
+  }
+
+  return {
+    result: result,
+    ignored: ignored,
+    watched: watched,
+    total: files.length,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {String} argument value given to the --delay option
+ * @return {Number} millisecond equivalent of the argument
+ */
+function parseDelay(value) {
+var millisPerSecond = 1000;
+var millis = 0;
+
+if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
+  // Explicitly parse for milliseconds when using ms time specifier
+  millis = parseInt(value, 10);
+} else {
+  // Otherwise, parse for seconds, with or without time specifier then convert
+  millis = parseFloat(value) * millisPerSecond;
+}
+...</pre></li>
     </ul>
 
 
@@ -330,7 +859,23 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
   return nodemon;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // immediately try to stop any polling
+  config.run = false;
+
+  if (child) {
+    // give up waiting for the kids after 10 seconds
+    exitTimer = setTimeout(exit, 10 * 1000);
+    child.<span class="apidocCodeKeywordSpan">removeAllListeners</span>(&#x27;exit&#x27;);
+    child.once(&#x27;exit&#x27;, exit);
+
+    kill(child, &#x27;SIGINT&#x27;);
+  } else {
+    exit();
+  }
+});
+...</pre></li>
     </ul>
 
 
@@ -364,6 +909,275 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.run" id="apidoc.element.nodemon.run">
+        function <span class="apidocSignatureSpan">nodemon.</span>run
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function run(options) {
+  var cmd = config.command.raw;
+
+  var runCmd = !options.runOnChangeOnly || config.lastStarted !== 0;
+  if (runCmd) {
+    utils.log.status(&#x27;starting `&#x27; + config.command.string + &#x27;`&#x27;);
+  }
+
+<span class="apidocCodeCommentSpan">  /*jshint validthis:true*/
+</span>  restart = run.bind(this, options);
+  run.restart = restart;
+
+  config.lastStarted = Date.now();
+
+  var stdio = [&#x27;pipe&#x27;, &#x27;pipe&#x27;, &#x27;pipe&#x27;];
+
+  if (config.options.stdout) {
+    stdio = [&#x27;pipe&#x27;,
+             process.stdout,
+             process.stderr,];
+  }
+
+  var sh = &#x27;sh&#x27;;
+  var shFlag = &#x27;-c&#x27;;
+
+  if (utils.isWindows) {
+    sh = &#x27;cmd&#x27;;
+    shFlag = &#x27;/c&#x27;;
+  }
+
+  var executable = cmd.executable;
+
+  // special logic for windows, as spaces in the paths need the path fragment
+  // quoted, so it reads: c:\&#x22;Program Files&#x22;\nodejs\node.exe
+  if (utils.isWindows &#x26;&#x26; executable.indexOf(&#x27; &#x27;) !== -1) {
+    var re = /\\((\w+\s+)+\w+)(?=([\\\.]))(?=([^&#x22;]*&#x22;[^&#x22;]*&#x22;)*[^&#x22;]*$)/g;
+    executable = executable.replace(re, &#x27;\\&#x22;$1&#x22;&#x27;);
+  }
+
+  var args = runCmd ? utils.stringify(executable, cmd.args) : &#x27;:&#x27;;
+  var spawnArgs = [sh, [shFlag, args]];
+  debug(&#x27;spawning&#x27;, args);
+
+  if (utils.version.major === 0 &#x26;&#x26; utils.version.minor &#x3c; 8) {
+    // use the old spawn args :-\
+  } else {
+    spawnArgs.push({
+      env: utils.merge(options.execOptions.env, process.env),
+      stdio: stdio,
+    });
+  }
+
+  child = spawn.apply(null, spawnArgs);
+
+  if (config.required) {
+    var emit = {
+      stdout: function (data) {
+        bus.emit(&#x27;stdout&#x27;, data);
+      },
+      stderr: function (data) {
+        bus.emit(&#x27;stderr&#x27;, data);
+      },
+    };
+
+    // now work out what to bind to...
+    if (config.options.stdout) {
+      child.on(&#x27;stdout&#x27;, emit.stdout).on(&#x27;stderr&#x27;, emit.stderr);
+    } else {
+      child.stdout.on(&#x27;data&#x27;, emit.stdout);
+      child.stderr.on(&#x27;data&#x27;, emit.stderr);
+
+      bus.stdout = child.stdout;
+      bus.stderr = child.stderr;
+    }
+  }
+
+  bus.emit(&#x27;start&#x27;);
+
+  utils.log.detail(&#x27;child pid: &#x27; + child.pid);
+
+  child.on(&#x27;error&#x27;, function (error) {
+    bus.emit(&#x27;error&#x27;, error);
+    if (error.code === &#x27;ENOENT&#x27;) {
+      utils.log.error(&#x27;unable to run executable: &#x22;&#x27; + cmd.executable + &#x27;&#x22;&#x27;);
+      process.exit(1);
+    } else {
+      utils.log.error(&#x27;failed to start child process: &#x27; + error.code);
+      throw error;
+    }
+  });
+
+  child.on(&#x27;exit&#x27;, function (code, signal) {
+    if (code === 127) {
+      utils.log.error(&#x27;failed to start process, &#x22;&#x27; + cmd.executable +
+        &#x27;&#x22; exec not found&#x27;);
+      bus.emit(&#x27;error&#x27;, code);
+      process.exit();
+    }
+
+    if (code === 2) {
+      // something wrong with parsed command
+      utils.log.error(&#x27;failed to start process, possible issue with exec &#x27; +
+        &#x27;arguments&#x27;);
+      bus.emit(&#x27;error&#x27;, code);
+      process.exit();
+    }
+
+    // In case we killed the app ourselves, set the signal thusly
+    if (killedAfterChange) {
+      killedAfterChange = false;
+      signal = config.signal;
+    }
+    // this is nasty, but it gives it windows support
+    if (utils.isWindows &#x26;&#x26; signal === &#x27;SIGTERM&#x27;) {
+      signal = config.signal;
+    }
+
+    if (signal === config.signal || code === 0) {
+      // this was a clean exit, so emit exit, rather than crash
+      debug(&#x27;bus.emit(exit) via &#x27; + config.signal);
+      bus.emit(&#x27;exit&#x27;);
+
+      // exit the monitor, but do it gracefully
+      if (signal === config.signal) {
+        return restart();
+      } else if (code === 0) { // clean exit - wait until file change to restart
+        if (runCmd) {
+          utils.log.status(&#x27;clean exit - waiting for changes before restart&#x27;);
+        }
+        child = null;
+      }
+    } else {
+      bus.emit(&#x27;crash&#x27;);
+      if (options.exitcrash) {
+        utils.log.fail(&#x27;app crashed&#x27;);
+        if (!config.required) {
+          process.exit(0);
+        }
+      } else {
+        utils.log.fail(&#x27;app crashed - waiting for file changes before&#x27; +
+        &#x27; starting...&#x27;);
+        child = null;
+      }
+    }
+
+    if (config.options.restartable) {
+      // stdin needs to kick in again to be able to listen to the
+      // restart command
+      process.stdin.resume();
+    }
+  });
+
+  run.kill = function (noRestart, callback) ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.version" id="apidoc.element.nodemon.version">
+        function <span class="apidocSignatureSpan">nodemon.</span>version
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function version(callback) {
+  // first find the package.json as this will be our root
+  var promise = findPackage(path.dirname(module.parent.filename))
+    .then(function (dir) {
+    // now try to load the package
+    var v = require(path.resolve(dir, &#x27;package.json&#x27;)).version;
+
+    if (v &#x26;&#x26; v !== &#x27;0.0.0&#x27;) {
+      return v;
+    }
+
+    root = dir;
+
+    // else we&#x27;re in development, give the commit out
+    // get the last commit and whether the working dir is dirty
+    var promises = [
+      branch().catch(function () { return &#x27;master&#x27;; }),
+      commit().catch(function () { return &#x27;&#x3c;none&#x3e;&#x27;; }),
+      dirty().catch(function () { return 0; }),
+    ];
+
+    // use the cached result as the export
+    return Promise.all(promises).then(function (res) {
+      var branch = res[0];
+      var commit = res[1];
+      var dirtyCount = parseInt(res[2], 10);
+      var curr = branch + &#x27;: &#x27; + commit;
+      if (dirtyCount !== 0) {
+        curr += &#x27; (&#x27; + dirtyCount + &#x27; dirty files)&#x27;;
+      }
+
+      return curr;
+    });
+  }).catch(function (error) {
+    console.log(error.stack);
+    throw error;
+  });
+
+  if (callback) {
+    promise.then(function (res) {
+      callback(null, res);
+    }, callback);
+  }
+
+  return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemon.colour" id="apidoc.module.nodemon.colour">module nodemon.colour</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.colour.colour" id="apidoc.element.nodemon.colour.colour">
+        function <span class="apidocSignatureSpan">nodemon.</span>colour
+        <span class="apidocSignatureSpan">(c, str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function colour(c, str) {
+  return (colour[c] || colour.black) + str + colour.black;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.colour.strip" id="apidoc.element.nodemon.colour.strip">
+        function <span class="apidocSignatureSpan">nodemon.colour.</span>strip
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function strip(str) {
+  re.lastIndex = 0; // reset position
+  return str.replace(re, &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
 
 
 
@@ -458,6 +1272,691 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
 
 
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemon.match" id="apidoc.module.nodemon.match">module nodemon.match</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.match.match" id="apidoc.element.nodemon.match.match">
+        function <span class="apidocSignatureSpan">nodemon.</span>match
+        <span class="apidocSignatureSpan">(files, monitor, ext)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function match(files, monitor, ext) {
+  // sort the rules by highest specificity (based on number of slashes)
+  // ignore rules (!) get sorted highest as they take precedent
+  // TODO actually check separator rules work on windows
+  var rules = monitor.sort(function (a, b) {
+    var r = b.split(path.sep).length - a.split(path.sep).length;
+    var aIsIgnore = a.slice(0, 1) === &#x27;!&#x27;;
+    var bIsIgnore = b.slice(0, 1) === &#x27;!&#x27;;
+
+    if (aIsIgnore || bIsIgnore) {
+      if (aIsIgnore) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+
+    if (r === 0) {
+      return b.length - a.length;
+    }
+    return r;
+  }).map(function (s) {
+    var prefix = s.slice(0, 1);
+
+    if (prefix === &#x27;!&#x27;) {
+      return &#x27;!**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s.slice(1);
+    } else if (s.slice(0, 2) === &#x27;..&#x27;) {
+      return path.resolve(process.cwd(), s);
+    }
+    return &#x27;**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s;
+  });
+
+  var good = [];
+  var whitelist = []; // files that we won&#x27;t check against the extension
+  var ignored = 0;
+  var watched = 0;
+  var usedRules = [];
+  var minimatchOpts = {};
+
+  // enable case-insensitivity on Windows
+  if (utils.isWindows) {
+    minimatchOpts.nocase = true;
+  }
+
+  files.forEach(function (file) {
+    var matched = false;
+    for (var i = 0; i &#x3c; rules.length; i++) {
+      if (rules[i].slice(0, 1) === &#x27;!&#x27;) {
+        if (!minimatch(file, rules[i], minimatchOpts)) {
+          ignored++;
+          matched = true;
+          break;
+        }
+      } else {
+        if (minimatch(file, rules[i], minimatchOpts)) {
+          watched++;
+
+          // don&#x27;t repeat the output if a rule is matched
+          if (usedRules.indexOf(rules[i]) === -1) {
+            usedRules.push(rules[i]);
+            utils.log.detail(&#x27;matched rule: &#x27; + rules[i]);
+          }
+
+          // if the rule doesn&#x27;t match the WATCH EVERYTHING
+          // but *does* match a rule that ends with *.*, then
+          // white list it - in that we don&#x27;t run it through
+          // the extension check too.
+          if (rules[i] !== &#x27;**&#x27; + path.sep + &#x27;*.*&#x27; &#x26;&#x26;
+            rules[i].slice(-3) === &#x27;*.*&#x27;) {
+            whitelist.push(file);
+          } else if (path.basename(file) === path.basename(rules[i])) {
+            // if the file matches the actual rule, then it&#x27;s put on whitelist
+            whitelist.push(file);
+          } else {
+            good.push(file);
+          }
+          matched = true;
+          break;
+        }
+      }
+    }
+    if (!matched) {
+      ignored++;
+    }
+  });
+
+
+  // finally check the good files against the extensions that we&#x27;re monitoring
+  if (ext) {
+    if (ext.indexOf(&#x27;,&#x27;) === -1) {
+      ext = &#x27;**/*.&#x27; + ext;
+    } else {
+      ext = &#x27;**/*.{&#x27; + ext + &#x27;}&#x27;;
+    }
+
+    good = good.filter(function (file) {
+      // only compare the filename to the extension test
+      return minimatch(path.basename(file), ext, minimatchOpts);
+    });
+  } // else assume *.*
+
+  var result = good.concat(whitelist);
+
+  if (utils.isWindows) {
+    // fix for windows testing - I *think* this is okay to do
+    result = result.map(function (file) {
+      return file.slice(0, 1).toLowerCase() + file.slice(1);
+    });
+  }
+
+  return {
+    result: result,
+    ignored: ignored,
+    watched: watched,
+    total: files.length,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {String} argument value given to the --delay option
+ * @return {Number} millisecond equivalent of the argument
+ */
+function parseDelay(value) {
+var millisPerSecond = 1000;
+var millis = 0;
+
+if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
+  // Explicitly parse for milliseconds when using ms time specifier
+  millis = parseInt(value, 10);
+} else {
+  // Otherwise, parse for seconds, with or without time specifier then convert
+  millis = parseFloat(value) * millisPerSecond;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.match.rulesToMonitor" id="apidoc.element.nodemon.match.rulesToMonitor">
+        function <span class="apidocSignatureSpan">nodemon.match.</span>rulesToMonitor
+        <span class="apidocSignatureSpan">(watch, ignore, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rulesToMonitor(watch, ignore, config) {
+  var monitor = [];
+
+  if (!Array.isArray(ignore)) {
+    if (ignore) {
+      ignore = [ignore];
+    } else {
+      ignore = [];
+    }
+  }
+
+  if (!Array.isArray(watch)) {
+    if (watch) {
+      watch = [watch];
+    } else {
+      watch = [];
+    }
+  }
+
+  if (watch &#x26;&#x26; watch.length) {
+    monitor = utils.clone(watch);
+  }
+
+  if (ignore) {
+    [].push.apply(monitor, (ignore || []).map(function (rule) {
+      return &#x27;!&#x27; + rule;
+    }));
+  }
+
+  var cwd = process.cwd();
+
+  // next check if the monitored paths are actual directories
+  // or just patterns - and expand the rule to include *.*
+  monitor = monitor.map(function (rule) {
+    var not = rule.slice(0, 1) === &#x27;!&#x27;;
+
+    if (not) {
+      rule = rule.slice(1);
+    }
+
+    if (rule === &#x27;.&#x27; || rule === &#x27;.*&#x27;) {
+      rule = &#x27;*.*&#x27;;
+    }
+
+    var dir = path.resolve(cwd, rule);
+
+    try {
+      var stat = fs.statSync(dir);
+      if (stat.isDirectory()) {
+        rule = dir;
+        if (rule.slice(-1) !== &#x27;/&#x27;) {
+          rule += &#x27;/&#x27;;
+        }
+        rule += &#x27;**/*&#x27;;
+
+        // `!not` ... sorry.
+        if (!not) {
+          config.dirs.push(dir);
+        }
+      } else {
+        // ensures we end up in the check that tries to get a base directory
+        // and then adds it to the watch list
+        throw new Error();
+      }
+    } catch (e) {
+      var base = tryBaseDir(dir);
+      if (!not &#x26;&#x26; base) {
+        if (config.dirs.indexOf(base) === -1) {
+          config.dirs.push(base);
+        }
+      }
+    }
+
+    if (rule.slice(-1) === &#x27;/&#x27;) {
+      // just slap on a * anyway
+      rule += &#x27;*&#x27;;
+    }
+
+    // if the url ends with * but not **/* and not *.*
+    // then convert to **/* - somehow it was missed :-\
+    if (rule.slice(-4) !== &#x27;**/*&#x27; &#x26;&#x26;
+        rule.slice(-1) === &#x27;*&#x27; &#x26;&#x26;
+        rule.indexOf(&#x27;*.&#x27;) === -1) {
+      rule += &#x27;*/*&#x27;;
+    }
+
+
+    return (not ? &#x27;!&#x27; : &#x27;&#x27;) + rule;
+  });
+
+  return monitor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemon.run" id="apidoc.module.nodemon.run">module nodemon.run</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.run.run" id="apidoc.element.nodemon.run.run">
+        function <span class="apidocSignatureSpan">nodemon.</span>run
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function run(options) {
+  var cmd = config.command.raw;
+
+  var runCmd = !options.runOnChangeOnly || config.lastStarted !== 0;
+  if (runCmd) {
+    utils.log.status(&#x27;starting `&#x27; + config.command.string + &#x27;`&#x27;);
+  }
+
+<span class="apidocCodeCommentSpan">  /*jshint validthis:true*/
+</span>  restart = run.bind(this, options);
+  run.restart = restart;
+
+  config.lastStarted = Date.now();
+
+  var stdio = [&#x27;pipe&#x27;, &#x27;pipe&#x27;, &#x27;pipe&#x27;];
+
+  if (config.options.stdout) {
+    stdio = [&#x27;pipe&#x27;,
+             process.stdout,
+             process.stderr,];
+  }
+
+  var sh = &#x27;sh&#x27;;
+  var shFlag = &#x27;-c&#x27;;
+
+  if (utils.isWindows) {
+    sh = &#x27;cmd&#x27;;
+    shFlag = &#x27;/c&#x27;;
+  }
+
+  var executable = cmd.executable;
+
+  // special logic for windows, as spaces in the paths need the path fragment
+  // quoted, so it reads: c:\&#x22;Program Files&#x22;\nodejs\node.exe
+  if (utils.isWindows &#x26;&#x26; executable.indexOf(&#x27; &#x27;) !== -1) {
+    var re = /\\((\w+\s+)+\w+)(?=([\\\.]))(?=([^&#x22;]*&#x22;[^&#x22;]*&#x22;)*[^&#x22;]*$)/g;
+    executable = executable.replace(re, &#x27;\\&#x22;$1&#x22;&#x27;);
+  }
+
+  var args = runCmd ? utils.stringify(executable, cmd.args) : &#x27;:&#x27;;
+  var spawnArgs = [sh, [shFlag, args]];
+  debug(&#x27;spawning&#x27;, args);
+
+  if (utils.version.major === 0 &#x26;&#x26; utils.version.minor &#x3c; 8) {
+    // use the old spawn args :-\
+  } else {
+    spawnArgs.push({
+      env: utils.merge(options.execOptions.env, process.env),
+      stdio: stdio,
+    });
+  }
+
+  child = spawn.apply(null, spawnArgs);
+
+  if (config.required) {
+    var emit = {
+      stdout: function (data) {
+        bus.emit(&#x27;stdout&#x27;, data);
+      },
+      stderr: function (data) {
+        bus.emit(&#x27;stderr&#x27;, data);
+      },
+    };
+
+    // now work out what to bind to...
+    if (config.options.stdout) {
+      child.on(&#x27;stdout&#x27;, emit.stdout).on(&#x27;stderr&#x27;, emit.stderr);
+    } else {
+      child.stdout.on(&#x27;data&#x27;, emit.stdout);
+      child.stderr.on(&#x27;data&#x27;, emit.stderr);
+
+      bus.stdout = child.stdout;
+      bus.stderr = child.stderr;
+    }
+  }
+
+  bus.emit(&#x27;start&#x27;);
+
+  utils.log.detail(&#x27;child pid: &#x27; + child.pid);
+
+  child.on(&#x27;error&#x27;, function (error) {
+    bus.emit(&#x27;error&#x27;, error);
+    if (error.code === &#x27;ENOENT&#x27;) {
+      utils.log.error(&#x27;unable to run executable: &#x22;&#x27; + cmd.executable + &#x27;&#x22;&#x27;);
+      process.exit(1);
+    } else {
+      utils.log.error(&#x27;failed to start child process: &#x27; + error.code);
+      throw error;
+    }
+  });
+
+  child.on(&#x27;exit&#x27;, function (code, signal) {
+    if (code === 127) {
+      utils.log.error(&#x27;failed to start process, &#x22;&#x27; + cmd.executable +
+        &#x27;&#x22; exec not found&#x27;);
+      bus.emit(&#x27;error&#x27;, code);
+      process.exit();
+    }
+
+    if (code === 2) {
+      // something wrong with parsed command
+      utils.log.error(&#x27;failed to start process, possible issue with exec &#x27; +
+        &#x27;arguments&#x27;);
+      bus.emit(&#x27;error&#x27;, code);
+      process.exit();
+    }
+
+    // In case we killed the app ourselves, set the signal thusly
+    if (killedAfterChange) {
+      killedAfterChange = false;
+      signal = config.signal;
+    }
+    // this is nasty, but it gives it windows support
+    if (utils.isWindows &#x26;&#x26; signal === &#x27;SIGTERM&#x27;) {
+      signal = config.signal;
+    }
+
+    if (signal === config.signal || code === 0) {
+      // this was a clean exit, so emit exit, rather than crash
+      debug(&#x27;bus.emit(exit) via &#x27; + config.signal);
+      bus.emit(&#x27;exit&#x27;);
+
+      // exit the monitor, but do it gracefully
+      if (signal === config.signal) {
+        return restart();
+      } else if (code === 0) { // clean exit - wait until file change to restart
+        if (runCmd) {
+          utils.log.status(&#x27;clean exit - waiting for changes before restart&#x27;);
+        }
+        child = null;
+      }
+    } else {
+      bus.emit(&#x27;crash&#x27;);
+      if (options.exitcrash) {
+        utils.log.fail(&#x27;app crashed&#x27;);
+        if (!config.required) {
+          process.exit(0);
+        }
+      } else {
+        utils.log.fail(&#x27;app crashed - waiting for file changes before&#x27; +
+        &#x27; starting...&#x27;);
+        child = null;
+      }
+    }
+
+    if (config.options.restartable) {
+      // stdin needs to kick in again to be able to listen to the
+      // restart command
+      process.stdin.resume();
+    }
+  });
+
+  run.kill = function (noRestart, callback) ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.run.kill" id="apidoc.element.nodemon.run.kill">
+        function <span class="apidocSignatureSpan">nodemon.run.</span>kill
+        <span class="apidocSignatureSpan">(flag, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">kill = function (flag, callback) {
+  if (callback) {
+    callback();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+nodemon sends a kill signal to your application when it sees a file update. If you need to clean up on shutdown inside your script
+ you can capture the kill signal and handle it yourself.
+
+The following example will listen once for the `SIGUSR2` signal (used by nodemon to restart), run the clean up process and then
+kill itself for nodemon to continue control:
+
+    process.once(&#x27;SIGUSR2&#x27;, function () {
+      gracefulShutdown(function () {
+        process.<span class="apidocCodeKeywordSpan">kill</span>(process.pid, &#x27;SIGUSR2&#x27;);
+      });
+    });
+
+Note that the `process.kill` is *only* called once your shutdown jobs are complete. Hat tip to [Benjie Gillam](http://www.benjiegillam
+.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/) for writing this technique up.
+
+## Triggering events when nodemon state changes
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.run.restart" id="apidoc.element.nodemon.run.restart">
+        function <span class="apidocSignatureSpan">nodemon.run.</span>restart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restart = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemon.version" id="apidoc.module.nodemon.version">module nodemon.version</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.version.version" id="apidoc.element.nodemon.version.version">
+        function <span class="apidocSignatureSpan">nodemon.</span>version
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function version(callback) {
+  // first find the package.json as this will be our root
+  var promise = findPackage(path.dirname(module.parent.filename))
+    .then(function (dir) {
+    // now try to load the package
+    var v = require(path.resolve(dir, &#x27;package.json&#x27;)).version;
+
+    if (v &#x26;&#x26; v !== &#x27;0.0.0&#x27;) {
+      return v;
+    }
+
+    root = dir;
+
+    // else we&#x27;re in development, give the commit out
+    // get the last commit and whether the working dir is dirty
+    var promises = [
+      branch().catch(function () { return &#x27;master&#x27;; }),
+      commit().catch(function () { return &#x27;&#x3c;none&#x3e;&#x27;; }),
+      dirty().catch(function () { return 0; }),
+    ];
+
+    // use the cached result as the export
+    return Promise.all(promises).then(function (res) {
+      var branch = res[0];
+      var commit = res[1];
+      var dirtyCount = parseInt(res[2], 10);
+      var curr = branch + &#x27;: &#x27; + commit;
+      if (dirtyCount !== 0) {
+        curr += &#x27; (&#x27; + dirtyCount + &#x27; dirty files)&#x27;;
+      }
+
+      return curr;
+    });
+  }).catch(function (error) {
+    console.log(error.stack);
+    throw error;
+  });
+
+  if (callback) {
+    promise.then(function (res) {
+      callback(null, res);
+    }, callback);
+  }
+
+  return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.version.pin" id="apidoc.element.nodemon.version.pin">
+        function <span class="apidocSignatureSpan">nodemon.version.</span>pin
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pin() {
+  return version().then(function (v) {
+    version.pinned = v;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodemon.watch" id="apidoc.module.nodemon.watch">module nodemon.watch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.watch.watch" id="apidoc.element.nodemon.watch.watch">
+        function <span class="apidocSignatureSpan">nodemon.</span>watch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function watch() {
+  if (watchers.length) {
+    debug(&#x27;early exit on watch, still watching (%s)&#x27;, watchers.length);
+    return;
+  }
+
+  var dirs = [].slice.call(config.dirs);
+
+  debugRoot(&#x27;start watch on: %s&#x27;, dirs.join(&#x27;, &#x27;));
+  debugRoot(&#x27;ignore dirs regex(%s)&#x27;, config.options.ignore.re);
+
+  var promises = [];
+  var watchedFiles = [];
+
+  dirs.forEach(function (dir) {
+    var promise = new Promise(function (resolve) {
+      var ignored = config.options.ignore.re;
+      var dotFilePattern = /[\/\\]\./;
+
+      // don&#x27;t ignore dotfiles if explicitly watched.
+      if (!dir.match(dotFilePattern)) {
+        ignored = [ignored, dotFilePattern];
+      }
+
+      var watcher = chokidar.watch(dir, {
+        ignored: ignored,
+        persistent: true,
+        usePolling: config.options.legacyWatch || false,
+        interval: config.options.pollingInterval,
+      });
+
+      watcher.ready = false;
+
+      var total = 0;
+
+      watcher.on(&#x27;change&#x27;, filterAndRestart);
+      watcher.on(&#x27;add&#x27;, function (file) {
+        if (watcher.ready) {
+          return filterAndRestart(file);
+        }
+
+        watchedFiles.push(file);
+        total++;
+        debug(&#x27;watching dir: %s&#x27;, file);
+      });
+      watcher.on(&#x27;ready&#x27;, function () {
+        watcher.ready = true;
+        resolve(total);
+        debugRoot(&#x27;watch is complete&#x27;);
+      });
+
+      watcher.on(&#x27;error&#x27;, function (error) {
+        if (error.code === &#x27;EINVAL&#x27;) {
+          utils.log.error(&#x27;Internal watch failed. Likely cause: too many &#x27; +
+            &#x27;files being watched (perhaps from the root of a drive?\n&#x27; +
+            &#x27;See https://github.com/paulmillr/chokidar/issues/229 for details&#x27;);
+        } else {
+          utils.log.error(&#x27;Internal watch failed: &#x27; + error.message);
+          process.exit(1);
+        }
+      });
+
+      watchers.push(watcher);
+    });
+    promises.push(promise);
+  });
+
+  return Promise.all(promises).then(function (res) {
+    var total = res.reduce(function (acc, curr) {
+      acc += curr;
+      return acc;
+    }, 0);
+
+    var count = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &#x27;,&#x27;);
+    utils.log.detail(&#x27;watching &#x27; + count + &#x27; files&#x27;);
+    return watchedFiles;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var dotFilePattern = /[\/\\]\./;
+
+// don&#x27;t ignore dotfiles if explicitly watched.
+if (!dir.match(dotFilePattern)) {
+  ignored = [ignored, dotFilePattern];
+}
+
+var watcher = chokidar.<span class="apidocCodeKeywordSpan">watch</span>(dir, {
+  ignored: ignored,
+  persistent: true,
+  usePolling: config.options.legacyWatch || false,
+  interval: config.options.pollingInterval,
+});
+
+watcher.ready = false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodemon.watch.resetWatchers" id="apidoc.element.nodemon.watch.resetWatchers">
+        function <span class="apidocSignatureSpan">nodemon.watch.</span>resetWatchers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resetWatchers() {
+  debug(&#x27;resetting watchers&#x27;);
+  watchers.forEach(function (watcher) {
+    watcher.close();
+  });
+  watchers = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 </div>

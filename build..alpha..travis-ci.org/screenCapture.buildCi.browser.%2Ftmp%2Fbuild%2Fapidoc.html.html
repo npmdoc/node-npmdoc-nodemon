@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://nodemon.io"
-
-    >nodemon (v1.11.0)</a>
+    <a href="http://nodemon.io">nodemon (v1.11.0)</a>
 </h1>
 <h4>Simple monitor script for use during development of a node.js app.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.nodemon">module nodemon</a><ol>
 
@@ -420,13 +413,13 @@
 
   // allow the cli string as the argument to nodemon, and allow for
   // `node nodemon -V app.js` or just `-V app.js`
-  if (typeof settings === &#x27;string&#x27;) {
+  if (typeof settings === 'string') {
     settings = settings.trim();
-    if (settings.indexOf(&#x27;node&#x27;) !== 0) {
-      if (settings.indexOf(&#x27;nodemon&#x27;) !== 0) {
-        settings = &#x27;nodemon &#x27; + settings;
+    if (settings.indexOf('node') !== 0) {
+      if (settings.indexOf('nodemon') !== 0) {
+        settings = 'nodemon ' + settings;
       }
-      settings = &#x27;node &#x27; + settings;
+      settings = 'node ' + settings;
     }
     settings = cli.parse(settings);
   }
@@ -457,7 +450,7 @@
   // the script is being run from, and will affect where
   // nodemon looks for the nodemon.json files
   if (settings.cwd) {
-    // this is protection to make sure we haven&#x27;t dont the chdir already...
+    // this is protection to make sure we haven't dont the chdir already...
     // say like in cli/parse.js (which is where we do this once already!)
     if (process.cwd() !== path.resolve(config.system.cwd, settings.cwd)) {
       process.chdir(settings.cwd);
@@ -465,10 +458,10 @@
   }
 
   config.load(settings, function (config) {
-    if (!config.options.dump &#x26;&#x26; !config.options.execOptions.script &#x26;&#x26;
-      config.options.execOptions.exec === &#x27;node&#x27;) {
+    if (!config.options.dump &amp;&amp; !config.options.execOptions.script &amp;&amp;
+      config.options.execOptions.exec === 'node') {
       if (!config.required) {
-        console.log(help(&#x27;usage&#x27;));
+        console.log(help('usage'));
         process.exit();
       }
       return;
@@ -481,36 +474,36 @@
     utils.log.info(version.pinned);
 
     if (config.options.cwd) {
-      utils.log.detail(&#x27;process root: &#x27; + process.cwd());
+      utils.log.detail('process root: ' + process.cwd());
     }
 
     config.loaded.forEach(function (filename) {
-      utils.log.detail(&#x27;reading config &#x27; + filename);
+      utils.log.detail('reading config ' + filename);
     });
 
     // echo out notices about running state
-    if (config.options.stdin &#x26;&#x26; config.options.restartable) {
-      // allow nodemon to restart when the use types &#x27;rs\n&#x27;
+    if (config.options.stdin &amp;&amp; config.options.restartable) {
+      // allow nodemon to restart when the use types 'rs\n'
       process.stdin.resume();
-      process.stdin.setEncoding(&#x27;utf8&#x27;);
-      process.stdin.on(&#x27;data&#x27;, function (data) {
-        data = (data + &#x27;&#x27;).trim().toLowerCase();
+      process.stdin.setEncoding('utf8');
+      process.stdin.on('data', function (data) {
+        data = (data + '').trim().toLowerCase();
 
         // if the keys entered match the restartable value, then restart!
         if (data === config.options.restartable) {
-          bus.emit(&#x27;restart&#x27;);
+          bus.emit('restart');
         }
       });
     } else if (config.options.stdin) {
-      // if &#x27;restartable&#x27; is disabled (via a nodemon.json)
-      // then it&#x27;s possible we&#x27;re being used with a REPL
-      // so let&#x27;s make sure we don&#x27;t eat the key presses
-      // but also, since we&#x27;re wrapping, watch out for
-      // special keys, like ctrl+c x 2 or &#x27;.exit&#x27; or ctrl+d
+      // if 'restartable' is disabled (via a nodemon.json)
+      // then it's possible we're being used with a REPL
+      // so let's make sure we don't eat the key presses
+      // but also, since we're wrapping, watch out for
+      // special keys, like ctrl+c x 2 or '.exit' or ctrl+d
       var ctrlC = false;
-      var buffer = &#x27;&#x27;;
+      var buffer = '';
 
-      process.stdin.on(&#x27;data&#x27;, function (data) {
+      process.stdin.on('data', function (data) {
         buffer += data;
         data = data.toString();
         var chr = data.charCodeAt(0);
@@ -519,38 +512,38 @@
             process.exit();
           }
           ctrlC = true;
-        } else if (buffer === &#x27;.exit&#x27; || chr === 4) {
+        } else if (buffer === '.exit' || chr === 4) {
           process.exit();
         } else if (ctrlC || chr === 10) {
           ctrlC = false;
-          buffer = &#x27;&#x27;;
+          buffer = '';
         }
       });
       process.stdin.setRawMode(true);
     }
 
     if (config.options.restartable) {
-      utils.log.info(&#x27;to restart at any time, enter `&#x27; +
-        config.options.restartable + &#x27;`&#x27;);
+      utils.log.info('to restart at any time, enter `' +
+        config.options.restartable + '`');
     }
 
     var none = function (v) {
       return v;
     };
 
-    utils.log.detail(&#x27;ignoring: &#x27; + config.options.monitor.map(function (rule) {
-      return rule.slice(0, 1) === &#x27;!&#x27; ? rule.slice(1) : false;
-    }).filter(none).join(&#x27; &#x27;));
+    utils.log.detail('ignoring: ' + config.options.monitor.map(function (rule) {
+      return rule.slice(0, 1) === '!' ? rule.slice(1) : false;
+    }).filter(none).join(' '));
 
-    utils.log.info(&#x27;watching: &#x27; + config.options.monitor.map(function (rule) {
-      return rule.slice(0, 1) !== &#x27;!&#x27; ? rule : false;
-    }).filter(none).join(&#x27; &#x27;));
+    utils.log.info('watching: ' + config.options.monitor.map(function (rule) {
+      return rule.slice(0, 1) !== '!' ? rule : false;
+    }).filter(none).join(' '));
 
-    utils.log.detail(&#x27;watching extensions: &#x27; + config.options.execOptions.ext);
+    utils.log.detail('watching extensions: ' + config.options.execOptions.ext);
 
 
     if (config.options.dump) {
-      utils.log._log(&#x27;log&#x27;, &#x27;--------- ...</pre></li>
+      utils.log._log('log', '--------- ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -608,10 +601,10 @@ child = spawn(sh, args);
   if (config.required) {
 var emit = {
   stdout: function (data) {
-    bus.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;stdout&#x27;, data);
+    bus.<span class="apidocCodeKeywordSpan">emit</span>('stdout', data);
   },
   stderr: function (data) {
-    bus.emit(&#x27;stderr&#x27;, data);
+    bus.emit('stderr', data);
   },
 };
 
@@ -634,8 +627,8 @@ var emit = {
   // TODO actually check separator rules work on windows
   var rules = monitor.sort(function (a, b) {
     var r = b.split(path.sep).length - a.split(path.sep).length;
-    var aIsIgnore = a.slice(0, 1) === &#x27;!&#x27;;
-    var bIsIgnore = b.slice(0, 1) === &#x27;!&#x27;;
+    var aIsIgnore = a.slice(0, 1) === '!';
+    var bIsIgnore = b.slice(0, 1) === '!';
 
     if (aIsIgnore || bIsIgnore) {
       if (aIsIgnore) {
@@ -652,16 +645,16 @@ var emit = {
   }).map(function (s) {
     var prefix = s.slice(0, 1);
 
-    if (prefix === &#x27;!&#x27;) {
-      return &#x27;!**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s.slice(1);
-    } else if (s.slice(0, 2) === &#x27;..&#x27;) {
+    if (prefix === '!') {
+      return '!**' + (prefix !== path.sep ? path.sep : '') + s.slice(1);
+    } else if (s.slice(0, 2) === '..') {
       return path.resolve(process.cwd(), s);
     }
-    return &#x27;**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s;
+    return '**' + (prefix !== path.sep ? path.sep : '') + s;
   });
 
   var good = [];
-  var whitelist = []; // files that we won&#x27;t check against the extension
+  var whitelist = []; // files that we won't check against the extension
   var ignored = 0;
   var watched = 0;
   var usedRules = [];
@@ -674,8 +667,8 @@ var emit = {
 
   files.forEach(function (file) {
     var matched = false;
-    for (var i = 0; i &#x3c; rules.length; i++) {
-      if (rules[i].slice(0, 1) === &#x27;!&#x27;) {
+    for (var i = 0; i &lt; rules.length; i++) {
+      if (rules[i].slice(0, 1) === '!') {
         if (!minimatch(file, rules[i], minimatchOpts)) {
           ignored++;
           matched = true;
@@ -685,21 +678,21 @@ var emit = {
         if (minimatch(file, rules[i], minimatchOpts)) {
           watched++;
 
-          // don&#x27;t repeat the output if a rule is matched
+          // don't repeat the output if a rule is matched
           if (usedRules.indexOf(rules[i]) === -1) {
             usedRules.push(rules[i]);
-            utils.log.detail(&#x27;matched rule: &#x27; + rules[i]);
+            utils.log.detail('matched rule: ' + rules[i]);
           }
 
-          // if the rule doesn&#x27;t match the WATCH EVERYTHING
+          // if the rule doesn't match the WATCH EVERYTHING
           // but *does* match a rule that ends with *.*, then
-          // white list it - in that we don&#x27;t run it through
+          // white list it - in that we don't run it through
           // the extension check too.
-          if (rules[i] !== &#x27;**&#x27; + path.sep + &#x27;*.*&#x27; &#x26;&#x26;
-            rules[i].slice(-3) === &#x27;*.*&#x27;) {
+          if (rules[i] !== '**' + path.sep + '*.*' &amp;&amp;
+            rules[i].slice(-3) === '*.*') {
             whitelist.push(file);
           } else if (path.basename(file) === path.basename(rules[i])) {
-            // if the file matches the actual rule, then it&#x27;s put on whitelist
+            // if the file matches the actual rule, then it's put on whitelist
             whitelist.push(file);
           } else {
             good.push(file);
@@ -715,12 +708,12 @@ var emit = {
   });
 
 
-  // finally check the good files against the extensions that we&#x27;re monitoring
+  // finally check the good files against the extensions that we're monitoring
   if (ext) {
-    if (ext.indexOf(&#x27;,&#x27;) === -1) {
-      ext = &#x27;**/*.&#x27; + ext;
+    if (ext.indexOf(',') === -1) {
+      ext = '**/*.' + ext;
     } else {
-      ext = &#x27;**/*.{&#x27; + ext + &#x27;}&#x27;;
+      ext = '**/*.{' + ext + '}';
     }
 
     good = good.filter(function (file) {
@@ -786,10 +779,10 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
 nodemon({
   script: ...,
   stdout: false // important: this tells nodemon not to output to console
-}).<span class="apidocCodeKeywordSpan">on</span>(&#x27;readable&#x27;, function() { // the `readable` event indicates that data
+}).<span class="apidocCodeKeywordSpan">on</span>('readable', function() { // the `readable` event indicates that data
 is ready to pick up
-  this.stdout.pipe(fs.createWriteStream(&#x27;output.txt&#x27;));
-  this.stderr.pipe(fs.createWriteStream(&#x27;err.txt&#x27;));
+  this.stdout.pipe(fs.createWriteStream('output.txt'));
+  this.stderr.pipe(fs.createWriteStream('err.txt'));
 });
 ```
 
@@ -810,7 +803,7 @@ is ready to pick up
   if (!eventHandlers[event]) { eventHandlers[event] = []; }
   eventHandlers[event].push(handler);
   bus.once(event, function () {
-    debug(&#x27;bus.once(%s)&#x27;, event);
+    debug('bus.once(%s)', event);
     eventHandlers[event].splice(eventHandlers[event].indexOf(handler), 1);
     handler.apply(this, arguments);
   });
@@ -826,9 +819,9 @@ nodemon sends a kill signal to your application when it sees a file update. If y
 The following example will listen once for the `SIGUSR2` signal (used by nodemon to restart), run the clean up process and then
 kill itself for nodemon to continue control:
 
-    process.<span class="apidocCodeKeywordSpan">once</span>(&#x27;SIGUSR2&#x27;, function () {
+    process.<span class="apidocCodeKeywordSpan">once</span>('SIGUSR2', function () {
       gracefulShutdown(function () {
-        process.kill(process.pid, &#x27;SIGUSR2&#x27;);
+        process.kill(process.pid, 'SIGUSR2');
       });
     });
 
@@ -867,10 +860,10 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
   if (child) {
     // give up waiting for the kids after 10 seconds
     exitTimer = setTimeout(exit, 10 * 1000);
-    child.<span class="apidocCodeKeywordSpan">removeAllListeners</span>(&#x27;exit&#x27;);
-    child.once(&#x27;exit&#x27;, exit);
+    child.<span class="apidocCodeKeywordSpan">removeAllListeners</span>('exit');
+    child.once('exit', exit);
 
-    kill(child, &#x27;SIGINT&#x27;);
+    kill(child, 'SIGINT');
   } else {
     exit();
   }
@@ -888,7 +881,7 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">reset = function (done) {
-  bus.emit(&#x27;reset&#x27;, done);
+  bus.emit('reset', done);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -903,8 +896,8 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">restart = function () {
-  utils.log.status(&#x27;restarting child process&#x27;);
-  bus.emit(&#x27;restart&#x27;);
+  utils.log.status('restarting child process');
+  bus.emit('restart');
   return nodemon;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -924,7 +917,7 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
   var runCmd = !options.runOnChangeOnly || config.lastStarted !== 0;
   if (runCmd) {
-    utils.log.status(&#x27;starting `&#x27; + config.command.string + &#x27;`&#x27;);
+    utils.log.status('starting `' + config.command.string + '`');
   }
 
 <span class="apidocCodeCommentSpan">  /*jshint validthis:true*/
@@ -933,36 +926,36 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
   config.lastStarted = Date.now();
 
-  var stdio = [&#x27;pipe&#x27;, &#x27;pipe&#x27;, &#x27;pipe&#x27;];
+  var stdio = ['pipe', 'pipe', 'pipe'];
 
   if (config.options.stdout) {
-    stdio = [&#x27;pipe&#x27;,
+    stdio = ['pipe',
              process.stdout,
              process.stderr,];
   }
 
-  var sh = &#x27;sh&#x27;;
-  var shFlag = &#x27;-c&#x27;;
+  var sh = 'sh';
+  var shFlag = '-c';
 
   if (utils.isWindows) {
-    sh = &#x27;cmd&#x27;;
-    shFlag = &#x27;/c&#x27;;
+    sh = 'cmd';
+    shFlag = '/c';
   }
 
   var executable = cmd.executable;
 
   // special logic for windows, as spaces in the paths need the path fragment
-  // quoted, so it reads: c:\&#x22;Program Files&#x22;\nodejs\node.exe
-  if (utils.isWindows &#x26;&#x26; executable.indexOf(&#x27; &#x27;) !== -1) {
-    var re = /\\((\w+\s+)+\w+)(?=([\\\.]))(?=([^&#x22;]*&#x22;[^&#x22;]*&#x22;)*[^&#x22;]*$)/g;
-    executable = executable.replace(re, &#x27;\\&#x22;$1&#x22;&#x27;);
+  // quoted, so it reads: c:\"Program Files"\nodejs\node.exe
+  if (utils.isWindows &amp;&amp; executable.indexOf(' ') !== -1) {
+    var re = /\\((\w+\s+)+\w+)(?=([\\\.]))(?=([^"]*"[^"]*")*[^"]*$)/g;
+    executable = executable.replace(re, '\\"$1"');
   }
 
-  var args = runCmd ? utils.stringify(executable, cmd.args) : &#x27;:&#x27;;
+  var args = runCmd ? utils.stringify(executable, cmd.args) : ':';
   var spawnArgs = [sh, [shFlag, args]];
-  debug(&#x27;spawning&#x27;, args);
+  debug('spawning', args);
 
-  if (utils.version.major === 0 &#x26;&#x26; utils.version.minor &#x3c; 8) {
+  if (utils.version.major === 0 &amp;&amp; utils.version.minor &lt; 8) {
     // use the old spawn args :-\
   } else {
     spawnArgs.push({
@@ -976,53 +969,53 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
   if (config.required) {
     var emit = {
       stdout: function (data) {
-        bus.emit(&#x27;stdout&#x27;, data);
+        bus.emit('stdout', data);
       },
       stderr: function (data) {
-        bus.emit(&#x27;stderr&#x27;, data);
+        bus.emit('stderr', data);
       },
     };
 
     // now work out what to bind to...
     if (config.options.stdout) {
-      child.on(&#x27;stdout&#x27;, emit.stdout).on(&#x27;stderr&#x27;, emit.stderr);
+      child.on('stdout', emit.stdout).on('stderr', emit.stderr);
     } else {
-      child.stdout.on(&#x27;data&#x27;, emit.stdout);
-      child.stderr.on(&#x27;data&#x27;, emit.stderr);
+      child.stdout.on('data', emit.stdout);
+      child.stderr.on('data', emit.stderr);
 
       bus.stdout = child.stdout;
       bus.stderr = child.stderr;
     }
   }
 
-  bus.emit(&#x27;start&#x27;);
+  bus.emit('start');
 
-  utils.log.detail(&#x27;child pid: &#x27; + child.pid);
+  utils.log.detail('child pid: ' + child.pid);
 
-  child.on(&#x27;error&#x27;, function (error) {
-    bus.emit(&#x27;error&#x27;, error);
-    if (error.code === &#x27;ENOENT&#x27;) {
-      utils.log.error(&#x27;unable to run executable: &#x22;&#x27; + cmd.executable + &#x27;&#x22;&#x27;);
+  child.on('error', function (error) {
+    bus.emit('error', error);
+    if (error.code === 'ENOENT') {
+      utils.log.error('unable to run executable: "' + cmd.executable + '"');
       process.exit(1);
     } else {
-      utils.log.error(&#x27;failed to start child process: &#x27; + error.code);
+      utils.log.error('failed to start child process: ' + error.code);
       throw error;
     }
   });
 
-  child.on(&#x27;exit&#x27;, function (code, signal) {
+  child.on('exit', function (code, signal) {
     if (code === 127) {
-      utils.log.error(&#x27;failed to start process, &#x22;&#x27; + cmd.executable +
-        &#x27;&#x22; exec not found&#x27;);
-      bus.emit(&#x27;error&#x27;, code);
+      utils.log.error('failed to start process, "' + cmd.executable +
+        '" exec not found');
+      bus.emit('error', code);
       process.exit();
     }
 
     if (code === 2) {
       // something wrong with parsed command
-      utils.log.error(&#x27;failed to start process, possible issue with exec &#x27; +
-        &#x27;arguments&#x27;);
-      bus.emit(&#x27;error&#x27;, code);
+      utils.log.error('failed to start process, possible issue with exec ' +
+        'arguments');
+      bus.emit('error', code);
       process.exit();
     }
 
@@ -1032,34 +1025,34 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
       signal = config.signal;
     }
     // this is nasty, but it gives it windows support
-    if (utils.isWindows &#x26;&#x26; signal === &#x27;SIGTERM&#x27;) {
+    if (utils.isWindows &amp;&amp; signal === 'SIGTERM') {
       signal = config.signal;
     }
 
     if (signal === config.signal || code === 0) {
       // this was a clean exit, so emit exit, rather than crash
-      debug(&#x27;bus.emit(exit) via &#x27; + config.signal);
-      bus.emit(&#x27;exit&#x27;);
+      debug('bus.emit(exit) via ' + config.signal);
+      bus.emit('exit');
 
       // exit the monitor, but do it gracefully
       if (signal === config.signal) {
         return restart();
       } else if (code === 0) { // clean exit - wait until file change to restart
         if (runCmd) {
-          utils.log.status(&#x27;clean exit - waiting for changes before restart&#x27;);
+          utils.log.status('clean exit - waiting for changes before restart');
         }
         child = null;
       }
     } else {
-      bus.emit(&#x27;crash&#x27;);
+      bus.emit('crash');
       if (options.exitcrash) {
-        utils.log.fail(&#x27;app crashed&#x27;);
+        utils.log.fail('app crashed');
         if (!config.required) {
           process.exit(0);
         }
       } else {
-        utils.log.fail(&#x27;app crashed - waiting for file changes before&#x27; +
-        &#x27; starting...&#x27;);
+        utils.log.fail('app crashed - waiting for file changes before' +
+        ' starting...');
         child = null;
       }
     }
@@ -1089,19 +1082,19 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
   var promise = findPackage(path.dirname(module.parent.filename))
     .then(function (dir) {
     // now try to load the package
-    var v = require(path.resolve(dir, &#x27;package.json&#x27;)).version;
+    var v = require(path.resolve(dir, 'package.json')).version;
 
-    if (v &#x26;&#x26; v !== &#x27;0.0.0&#x27;) {
+    if (v &amp;&amp; v !== '0.0.0') {
       return v;
     }
 
     root = dir;
 
-    // else we&#x27;re in development, give the commit out
+    // else we're in development, give the commit out
     // get the last commit and whether the working dir is dirty
     var promises = [
-      branch().catch(function () { return &#x27;master&#x27;; }),
-      commit().catch(function () { return &#x27;&#x3c;none&#x3e;&#x27;; }),
+      branch().catch(function () { return 'master'; }),
+      commit().catch(function () { return '&lt;none&gt;'; }),
       dirty().catch(function () { return 0; }),
     ];
 
@@ -1110,9 +1103,9 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
       var branch = res[0];
       var commit = res[1];
       var dirtyCount = parseInt(res[2], 10);
-      var curr = branch + &#x27;: &#x27; + commit;
+      var curr = branch + ': ' + commit;
       if (dirtyCount !== 0) {
-        curr += &#x27; (&#x27; + dirtyCount + &#x27; dirty files)&#x27;;
+        curr += ' (' + dirtyCount + ' dirty files)';
       }
 
       return curr;
@@ -1168,7 +1161,7 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function strip(str) {
   re.lastIndex = 0; // reset position
-  return str.replace(re, &#x27;&#x27;);
+  return str.replace(re, '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1207,15 +1200,15 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
     if (options.watch.length === 0) {
       // this is to catch when the watch is left blank
-      options.watch.push(&#x27;*.*&#x27;);
+      options.watch.push('*.*');
     }
 
-    if (options[&#x27;watch_interval&#x27;]) { // jshint ignore:line
-      options.watchInterval = options[&#x27;watch_interval&#x27;]; // jshint ignore:line
+    if (options['watch_interval']) { // jshint ignore:line
+      options.watchInterval = options['watch_interval']; // jshint ignore:line
     }
 
     config.watchInterval = options.watchInterval || null;
-    if (options[&#x27;signal&#x27;]) { // jshint ignore:line
+    if (options['signal']) { // jshint ignore:line
       config.signal = options.signal;
     }
 
@@ -1229,12 +1222,12 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     options.monitor = rulesToMonitor(options.watch, options.ignore, config);
 
     var cwd = process.cwd();
-    debug(&#x27;config: dirs&#x27;, config.dirs);
+    debug('config: dirs', config.dirs);
     if (config.dirs.length === 0) {
       config.dirs.unshift(cwd);
     }
 
-    bus.emit(&#x27;config:update&#x27;, config);
+    bus.emit('config:update', config);
     pinVersion().then(function () {
       ready(config);
     });
@@ -1297,8 +1290,8 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
   // TODO actually check separator rules work on windows
   var rules = monitor.sort(function (a, b) {
     var r = b.split(path.sep).length - a.split(path.sep).length;
-    var aIsIgnore = a.slice(0, 1) === &#x27;!&#x27;;
-    var bIsIgnore = b.slice(0, 1) === &#x27;!&#x27;;
+    var aIsIgnore = a.slice(0, 1) === '!';
+    var bIsIgnore = b.slice(0, 1) === '!';
 
     if (aIsIgnore || bIsIgnore) {
       if (aIsIgnore) {
@@ -1315,16 +1308,16 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
   }).map(function (s) {
     var prefix = s.slice(0, 1);
 
-    if (prefix === &#x27;!&#x27;) {
-      return &#x27;!**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s.slice(1);
-    } else if (s.slice(0, 2) === &#x27;..&#x27;) {
+    if (prefix === '!') {
+      return '!**' + (prefix !== path.sep ? path.sep : '') + s.slice(1);
+    } else if (s.slice(0, 2) === '..') {
       return path.resolve(process.cwd(), s);
     }
-    return &#x27;**&#x27; + (prefix !== path.sep ? path.sep : &#x27;&#x27;) + s;
+    return '**' + (prefix !== path.sep ? path.sep : '') + s;
   });
 
   var good = [];
-  var whitelist = []; // files that we won&#x27;t check against the extension
+  var whitelist = []; // files that we won't check against the extension
   var ignored = 0;
   var watched = 0;
   var usedRules = [];
@@ -1337,8 +1330,8 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
   files.forEach(function (file) {
     var matched = false;
-    for (var i = 0; i &#x3c; rules.length; i++) {
-      if (rules[i].slice(0, 1) === &#x27;!&#x27;) {
+    for (var i = 0; i &lt; rules.length; i++) {
+      if (rules[i].slice(0, 1) === '!') {
         if (!minimatch(file, rules[i], minimatchOpts)) {
           ignored++;
           matched = true;
@@ -1348,21 +1341,21 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
         if (minimatch(file, rules[i], minimatchOpts)) {
           watched++;
 
-          // don&#x27;t repeat the output if a rule is matched
+          // don't repeat the output if a rule is matched
           if (usedRules.indexOf(rules[i]) === -1) {
             usedRules.push(rules[i]);
-            utils.log.detail(&#x27;matched rule: &#x27; + rules[i]);
+            utils.log.detail('matched rule: ' + rules[i]);
           }
 
-          // if the rule doesn&#x27;t match the WATCH EVERYTHING
+          // if the rule doesn't match the WATCH EVERYTHING
           // but *does* match a rule that ends with *.*, then
-          // white list it - in that we don&#x27;t run it through
+          // white list it - in that we don't run it through
           // the extension check too.
-          if (rules[i] !== &#x27;**&#x27; + path.sep + &#x27;*.*&#x27; &#x26;&#x26;
-            rules[i].slice(-3) === &#x27;*.*&#x27;) {
+          if (rules[i] !== '**' + path.sep + '*.*' &amp;&amp;
+            rules[i].slice(-3) === '*.*') {
             whitelist.push(file);
           } else if (path.basename(file) === path.basename(rules[i])) {
-            // if the file matches the actual rule, then it&#x27;s put on whitelist
+            // if the file matches the actual rule, then it's put on whitelist
             whitelist.push(file);
           } else {
             good.push(file);
@@ -1378,12 +1371,12 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
   });
 
 
-  // finally check the good files against the extensions that we&#x27;re monitoring
+  // finally check the good files against the extensions that we're monitoring
   if (ext) {
-    if (ext.indexOf(&#x27;,&#x27;) === -1) {
-      ext = &#x27;**/*.&#x27; + ext;
+    if (ext.indexOf(',') === -1) {
+      ext = '**/*.' + ext;
     } else {
-      ext = &#x27;**/*.{&#x27; + ext + &#x27;}&#x27;;
+      ext = '**/*.{' + ext + '}';
     }
 
     good = good.filter(function (file) {
@@ -1454,13 +1447,13 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
     }
   }
 
-  if (watch &#x26;&#x26; watch.length) {
+  if (watch &amp;&amp; watch.length) {
     monitor = utils.clone(watch);
   }
 
   if (ignore) {
     [].push.apply(monitor, (ignore || []).map(function (rule) {
-      return &#x27;!&#x27; + rule;
+      return '!' + rule;
     }));
   }
 
@@ -1469,14 +1462,14 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
   // next check if the monitored paths are actual directories
   // or just patterns - and expand the rule to include *.*
   monitor = monitor.map(function (rule) {
-    var not = rule.slice(0, 1) === &#x27;!&#x27;;
+    var not = rule.slice(0, 1) === '!';
 
     if (not) {
       rule = rule.slice(1);
     }
 
-    if (rule === &#x27;.&#x27; || rule === &#x27;.*&#x27;) {
-      rule = &#x27;*.*&#x27;;
+    if (rule === '.' || rule === '.*') {
+      rule = '*.*';
     }
 
     var dir = path.resolve(cwd, rule);
@@ -1485,10 +1478,10 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
       var stat = fs.statSync(dir);
       if (stat.isDirectory()) {
         rule = dir;
-        if (rule.slice(-1) !== &#x27;/&#x27;) {
-          rule += &#x27;/&#x27;;
+        if (rule.slice(-1) !== '/') {
+          rule += '/';
         }
-        rule += &#x27;**/*&#x27;;
+        rule += '**/*';
 
         // `!not` ... sorry.
         if (!not) {
@@ -1501,28 +1494,28 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
       }
     } catch (e) {
       var base = tryBaseDir(dir);
-      if (!not &#x26;&#x26; base) {
+      if (!not &amp;&amp; base) {
         if (config.dirs.indexOf(base) === -1) {
           config.dirs.push(base);
         }
       }
     }
 
-    if (rule.slice(-1) === &#x27;/&#x27;) {
+    if (rule.slice(-1) === '/') {
       // just slap on a * anyway
-      rule += &#x27;*&#x27;;
+      rule += '*';
     }
 
     // if the url ends with * but not **/* and not *.*
     // then convert to **/* - somehow it was missed :-\
-    if (rule.slice(-4) !== &#x27;**/*&#x27; &#x26;&#x26;
-        rule.slice(-1) === &#x27;*&#x27; &#x26;&#x26;
-        rule.indexOf(&#x27;*.&#x27;) === -1) {
-      rule += &#x27;*/*&#x27;;
+    if (rule.slice(-4) !== '**/*' &amp;&amp;
+        rule.slice(-1) === '*' &amp;&amp;
+        rule.indexOf('*.') === -1) {
+      rule += '*/*';
     }
 
 
-    return (not ? &#x27;!&#x27; : &#x27;&#x27;) + rule;
+    return (not ? '!' : '') + rule;
   });
 
   return monitor;
@@ -1549,7 +1542,7 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
 
   var runCmd = !options.runOnChangeOnly || config.lastStarted !== 0;
   if (runCmd) {
-    utils.log.status(&#x27;starting `&#x27; + config.command.string + &#x27;`&#x27;);
+    utils.log.status('starting `' + config.command.string + '`');
   }
 
 <span class="apidocCodeCommentSpan">  /*jshint validthis:true*/
@@ -1558,36 +1551,36 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
 
   config.lastStarted = Date.now();
 
-  var stdio = [&#x27;pipe&#x27;, &#x27;pipe&#x27;, &#x27;pipe&#x27;];
+  var stdio = ['pipe', 'pipe', 'pipe'];
 
   if (config.options.stdout) {
-    stdio = [&#x27;pipe&#x27;,
+    stdio = ['pipe',
              process.stdout,
              process.stderr,];
   }
 
-  var sh = &#x27;sh&#x27;;
-  var shFlag = &#x27;-c&#x27;;
+  var sh = 'sh';
+  var shFlag = '-c';
 
   if (utils.isWindows) {
-    sh = &#x27;cmd&#x27;;
-    shFlag = &#x27;/c&#x27;;
+    sh = 'cmd';
+    shFlag = '/c';
   }
 
   var executable = cmd.executable;
 
   // special logic for windows, as spaces in the paths need the path fragment
-  // quoted, so it reads: c:\&#x22;Program Files&#x22;\nodejs\node.exe
-  if (utils.isWindows &#x26;&#x26; executable.indexOf(&#x27; &#x27;) !== -1) {
-    var re = /\\((\w+\s+)+\w+)(?=([\\\.]))(?=([^&#x22;]*&#x22;[^&#x22;]*&#x22;)*[^&#x22;]*$)/g;
-    executable = executable.replace(re, &#x27;\\&#x22;$1&#x22;&#x27;);
+  // quoted, so it reads: c:\"Program Files"\nodejs\node.exe
+  if (utils.isWindows &amp;&amp; executable.indexOf(' ') !== -1) {
+    var re = /\\((\w+\s+)+\w+)(?=([\\\.]))(?=([^"]*"[^"]*")*[^"]*$)/g;
+    executable = executable.replace(re, '\\"$1"');
   }
 
-  var args = runCmd ? utils.stringify(executable, cmd.args) : &#x27;:&#x27;;
+  var args = runCmd ? utils.stringify(executable, cmd.args) : ':';
   var spawnArgs = [sh, [shFlag, args]];
-  debug(&#x27;spawning&#x27;, args);
+  debug('spawning', args);
 
-  if (utils.version.major === 0 &#x26;&#x26; utils.version.minor &#x3c; 8) {
+  if (utils.version.major === 0 &amp;&amp; utils.version.minor &lt; 8) {
     // use the old spawn args :-\
   } else {
     spawnArgs.push({
@@ -1601,53 +1594,53 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
   if (config.required) {
     var emit = {
       stdout: function (data) {
-        bus.emit(&#x27;stdout&#x27;, data);
+        bus.emit('stdout', data);
       },
       stderr: function (data) {
-        bus.emit(&#x27;stderr&#x27;, data);
+        bus.emit('stderr', data);
       },
     };
 
     // now work out what to bind to...
     if (config.options.stdout) {
-      child.on(&#x27;stdout&#x27;, emit.stdout).on(&#x27;stderr&#x27;, emit.stderr);
+      child.on('stdout', emit.stdout).on('stderr', emit.stderr);
     } else {
-      child.stdout.on(&#x27;data&#x27;, emit.stdout);
-      child.stderr.on(&#x27;data&#x27;, emit.stderr);
+      child.stdout.on('data', emit.stdout);
+      child.stderr.on('data', emit.stderr);
 
       bus.stdout = child.stdout;
       bus.stderr = child.stderr;
     }
   }
 
-  bus.emit(&#x27;start&#x27;);
+  bus.emit('start');
 
-  utils.log.detail(&#x27;child pid: &#x27; + child.pid);
+  utils.log.detail('child pid: ' + child.pid);
 
-  child.on(&#x27;error&#x27;, function (error) {
-    bus.emit(&#x27;error&#x27;, error);
-    if (error.code === &#x27;ENOENT&#x27;) {
-      utils.log.error(&#x27;unable to run executable: &#x22;&#x27; + cmd.executable + &#x27;&#x22;&#x27;);
+  child.on('error', function (error) {
+    bus.emit('error', error);
+    if (error.code === 'ENOENT') {
+      utils.log.error('unable to run executable: "' + cmd.executable + '"');
       process.exit(1);
     } else {
-      utils.log.error(&#x27;failed to start child process: &#x27; + error.code);
+      utils.log.error('failed to start child process: ' + error.code);
       throw error;
     }
   });
 
-  child.on(&#x27;exit&#x27;, function (code, signal) {
+  child.on('exit', function (code, signal) {
     if (code === 127) {
-      utils.log.error(&#x27;failed to start process, &#x22;&#x27; + cmd.executable +
-        &#x27;&#x22; exec not found&#x27;);
-      bus.emit(&#x27;error&#x27;, code);
+      utils.log.error('failed to start process, "' + cmd.executable +
+        '" exec not found');
+      bus.emit('error', code);
       process.exit();
     }
 
     if (code === 2) {
       // something wrong with parsed command
-      utils.log.error(&#x27;failed to start process, possible issue with exec &#x27; +
-        &#x27;arguments&#x27;);
-      bus.emit(&#x27;error&#x27;, code);
+      utils.log.error('failed to start process, possible issue with exec ' +
+        'arguments');
+      bus.emit('error', code);
       process.exit();
     }
 
@@ -1657,34 +1650,34 @@ if (value.<span class="apidocCodeKeywordSpan">match</span>(/^\d*ms$/)) {
       signal = config.signal;
     }
     // this is nasty, but it gives it windows support
-    if (utils.isWindows &#x26;&#x26; signal === &#x27;SIGTERM&#x27;) {
+    if (utils.isWindows &amp;&amp; signal === 'SIGTERM') {
       signal = config.signal;
     }
 
     if (signal === config.signal || code === 0) {
       // this was a clean exit, so emit exit, rather than crash
-      debug(&#x27;bus.emit(exit) via &#x27; + config.signal);
-      bus.emit(&#x27;exit&#x27;);
+      debug('bus.emit(exit) via ' + config.signal);
+      bus.emit('exit');
 
       // exit the monitor, but do it gracefully
       if (signal === config.signal) {
         return restart();
       } else if (code === 0) { // clean exit - wait until file change to restart
         if (runCmd) {
-          utils.log.status(&#x27;clean exit - waiting for changes before restart&#x27;);
+          utils.log.status('clean exit - waiting for changes before restart');
         }
         child = null;
       }
     } else {
-      bus.emit(&#x27;crash&#x27;);
+      bus.emit('crash');
       if (options.exitcrash) {
-        utils.log.fail(&#x27;app crashed&#x27;);
+        utils.log.fail('app crashed');
         if (!config.required) {
           process.exit(0);
         }
       } else {
-        utils.log.fail(&#x27;app crashed - waiting for file changes before&#x27; +
-        &#x27; starting...&#x27;);
+        utils.log.fail('app crashed - waiting for file changes before' +
+        ' starting...');
         child = null;
       }
     }
@@ -1722,9 +1715,9 @@ nodemon sends a kill signal to your application when it sees a file update. If y
 The following example will listen once for the `SIGUSR2` signal (used by nodemon to restart), run the clean up process and then
 kill itself for nodemon to continue control:
 
-    process.once(&#x27;SIGUSR2&#x27;, function () {
+    process.once('SIGUSR2', function () {
       gracefulShutdown(function () {
-        process.<span class="apidocCodeKeywordSpan">kill</span>(process.pid, &#x27;SIGUSR2&#x27;);
+        process.<span class="apidocCodeKeywordSpan">kill</span>(process.pid, 'SIGUSR2');
       });
     });
 
@@ -1767,19 +1760,19 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
   var promise = findPackage(path.dirname(module.parent.filename))
     .then(function (dir) {
     // now try to load the package
-    var v = require(path.resolve(dir, &#x27;package.json&#x27;)).version;
+    var v = require(path.resolve(dir, 'package.json')).version;
 
-    if (v &#x26;&#x26; v !== &#x27;0.0.0&#x27;) {
+    if (v &amp;&amp; v !== '0.0.0') {
       return v;
     }
 
     root = dir;
 
-    // else we&#x27;re in development, give the commit out
+    // else we're in development, give the commit out
     // get the last commit and whether the working dir is dirty
     var promises = [
-      branch().catch(function () { return &#x27;master&#x27;; }),
-      commit().catch(function () { return &#x27;&#x3c;none&#x3e;&#x27;; }),
+      branch().catch(function () { return 'master'; }),
+      commit().catch(function () { return '&lt;none&gt;'; }),
       dirty().catch(function () { return 0; }),
     ];
 
@@ -1788,9 +1781,9 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
       var branch = res[0];
       var commit = res[1];
       var dirtyCount = parseInt(res[2], 10);
-      var curr = branch + &#x27;: &#x27; + commit;
+      var curr = branch + ': ' + commit;
       if (dirtyCount !== 0) {
-        curr += &#x27; (&#x27; + dirtyCount + &#x27; dirty files)&#x27;;
+        curr += ' (' + dirtyCount + ' dirty files)';
       }
 
       return curr;
@@ -1844,14 +1837,14 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function watch() {
   if (watchers.length) {
-    debug(&#x27;early exit on watch, still watching (%s)&#x27;, watchers.length);
+    debug('early exit on watch, still watching (%s)', watchers.length);
     return;
   }
 
   var dirs = [].slice.call(config.dirs);
 
-  debugRoot(&#x27;start watch on: %s&#x27;, dirs.join(&#x27;, &#x27;));
-  debugRoot(&#x27;ignore dirs regex(%s)&#x27;, config.options.ignore.re);
+  debugRoot('start watch on: %s', dirs.join(', '));
+  debugRoot('ignore dirs regex(%s)', config.options.ignore.re);
 
   var promises = [];
   var watchedFiles = [];
@@ -1861,7 +1854,7 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
       var ignored = config.options.ignore.re;
       var dotFilePattern = /[\/\\]\./;
 
-      // don&#x27;t ignore dotfiles if explicitly watched.
+      // don't ignore dotfiles if explicitly watched.
       if (!dir.match(dotFilePattern)) {
         ignored = [ignored, dotFilePattern];
       }
@@ -1877,29 +1870,29 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
 
       var total = 0;
 
-      watcher.on(&#x27;change&#x27;, filterAndRestart);
-      watcher.on(&#x27;add&#x27;, function (file) {
+      watcher.on('change', filterAndRestart);
+      watcher.on('add', function (file) {
         if (watcher.ready) {
           return filterAndRestart(file);
         }
 
         watchedFiles.push(file);
         total++;
-        debug(&#x27;watching dir: %s&#x27;, file);
+        debug('watching dir: %s', file);
       });
-      watcher.on(&#x27;ready&#x27;, function () {
+      watcher.on('ready', function () {
         watcher.ready = true;
         resolve(total);
-        debugRoot(&#x27;watch is complete&#x27;);
+        debugRoot('watch is complete');
       });
 
-      watcher.on(&#x27;error&#x27;, function (error) {
-        if (error.code === &#x27;EINVAL&#x27;) {
-          utils.log.error(&#x27;Internal watch failed. Likely cause: too many &#x27; +
-            &#x27;files being watched (perhaps from the root of a drive?\n&#x27; +
-            &#x27;See https://github.com/paulmillr/chokidar/issues/229 for details&#x27;);
+      watcher.on('error', function (error) {
+        if (error.code === 'EINVAL') {
+          utils.log.error('Internal watch failed. Likely cause: too many ' +
+            'files being watched (perhaps from the root of a drive?\n' +
+            'See https://github.com/paulmillr/chokidar/issues/229 for details');
         } else {
-          utils.log.error(&#x27;Internal watch failed: &#x27; + error.message);
+          utils.log.error('Internal watch failed: ' + error.message);
           process.exit(1);
         }
       });
@@ -1915,15 +1908,15 @@ Note that the `process.kill` is *only* called once your shutdown jobs are comple
       return acc;
     }, 0);
 
-    var count = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &#x27;,&#x27;);
-    utils.log.detail(&#x27;watching &#x27; + count + &#x27; files&#x27;);
+    var count = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    utils.log.detail('watching ' + count + ' files');
     return watchedFiles;
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var dotFilePattern = /[\/\\]\./;
 
-// don&#x27;t ignore dotfiles if explicitly watched.
+// don't ignore dotfiles if explicitly watched.
 if (!dir.match(dotFilePattern)) {
   ignored = [ignored, dotFilePattern];
 }
@@ -1949,7 +1942,7 @@ watcher.ready = false;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function resetWatchers() {
-  debug(&#x27;resetting watchers&#x27;);
+  debug('resetting watchers');
   watchers.forEach(function (watcher) {
     watcher.close();
   });
@@ -1967,3 +1960,4 @@ watcher.ready = false;
     ]
 </div>
 </div>
+</body></html>
